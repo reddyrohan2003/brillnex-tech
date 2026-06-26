@@ -129,7 +129,7 @@ export default function TrendingCourses() {
   };
 
   return (
-    <section id="courses" className="py-20 bg-background overflow-hidden">
+    <section id="courses" className="py-20 bg-background">
       <div className="container mx-auto px-4 md:px-6">
         
         {/* ROW 1: OUR SPECIAL SERVICES */}
@@ -214,7 +214,7 @@ export default function TrendingCourses() {
                     href={`https://wa.me/917204398855?text=${encodeURIComponent(`Hello! I would like to inquire about your *${service.title}* service. Please provide more details.`)}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full btn-secondary text-center py-2 text-xs sm:text-sm font-semibold block"
+                    className="w-full btn-secondary text-center py-2 text-xs sm:text-sm font-semibold block relative z-10"
                   >
                     Contact Us
                   </a>
@@ -321,7 +321,7 @@ export default function TrendingCourses() {
                     href={`https://wa.me/917204398855?text=${encodeURIComponent(`Hello! I want to enroll in the *${course.title}* course. Please share details on fees and batch schedules.`)}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full btn-secondary text-center py-2 text-xs sm:text-sm font-semibold block"
+                    className="w-full btn-secondary text-center py-2 text-xs sm:text-sm font-semibold block relative z-10"
                   >
                     Enroll Now
                   </a>
