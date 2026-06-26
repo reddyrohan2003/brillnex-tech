@@ -116,7 +116,7 @@ export default function PricingPlans() {
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold">Choose Your Learning Path</h2>
         </div>
 
-        <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-8 max-w-7xl mx-auto items-start">
+        <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-8 max-w-7xl mx-auto items-stretch">
           {plans.map((plan, index) => (
             <motion.div
               key={index}
@@ -124,30 +124,30 @@ export default function PricingPlans() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
+              whileHover={{ y: -8 }}
               className={cn(
-                "relative bg-white rounded-3xl p-8 transition-all duration-500 group",
+                "relative bg-white rounded-3xl p-8 transition-all duration-300 flex flex-col justify-between h-full group",
                 plan.isRecommended 
                   ? "border-2 border-primary shadow-2xl scale-100 xl:scale-105 z-10" 
                   : "border border-gray-100 shadow-md hover:shadow-xl"
               )}
             >
               {plan.isRecommended && (
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-primary text-white text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-wide">
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-primary text-white text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-wide z-20">
                   Recommended
                 </div>
               )}
               
-              <h3 className="text-xl font-bold mb-2 font-heading">{plan.name}</h3>
-              <p className="text-text-secondary text-sm mb-6 min-h-[40px]">{plan.desc}</p>
-              
-              <div className="mb-6">
-                <span className="text-4xl font-bold font-heading">{plan.price}</span>
-                <span className="text-gray-400 font-medium">{plan.period}</span>
-              </div>
-              
-              <div className="relative mb-8">
-                {/* Features list container - expands smoothly on hover */}
-                <div className="max-h-[220px] group-hover:max-h-[600px] overflow-hidden transition-all duration-700 ease-in-out space-y-3.5 pr-1">
+              <div>
+                <h3 className="text-xl font-bold mb-2 font-heading">{plan.name}</h3>
+                <p className="text-text-secondary text-sm mb-6 min-h-[40px]">{plan.desc}</p>
+                
+                <div className="mb-6">
+                  <span className="text-4xl font-bold font-heading">{plan.price}</span>
+                  <span className="text-gray-400 font-medium">{plan.period}</span>
+                </div>
+                
+                <div className="space-y-3 mb-8">
                   {plan.features.map((feature, fIndex) => (
                     <div key={fIndex} className="flex items-start gap-3">
                       {feature.included ? (
@@ -160,23 +160,13 @@ export default function PricingPlans() {
                         </div>
                       )}
                       <span className={cn(
-                        "text-sm transition-colors duration-300",
+                        "text-xs transition-colors duration-300",
                         feature.included ? "text-text-primary font-medium" : "text-gray-400 line-through decoration-gray-200"
                       )}>
                         {feature.name}
                       </span>
                     </div>
                   ))}
-                </div>
-
-                {/* Fade effect at the bottom of the list when collapsed */}
-                <div className="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-white to-transparent pointer-events-none group-hover:opacity-0 transition-opacity duration-500" />
-                
-                {/* Interactive indicator to nudge user to hover */}
-                <div className="mt-4 text-center group-hover:hidden transition-all duration-300">
-                  <p className="text-[10px] font-bold text-primary tracking-wider uppercase bg-primary/5 rounded-full py-1.5 px-3 inline-block animate-pulse">
-                    + {plan.features.length - 6} features (hover to see)
-                  </p>
                 </div>
               </div>
               
@@ -185,7 +175,7 @@ export default function PricingPlans() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className={cn(
-                  "w-full block text-center py-3 rounded-lg font-heading font-semibold transition-all cursor-pointer",
+                  "w-full block text-center py-3 rounded-lg font-heading font-semibold transition-all cursor-pointer mt-auto",
                   plan.isRecommended 
                     ? "bg-primary text-white hover:bg-blue-700 shadow-lg shadow-primary/25" 
                     : "bg-white border border-gray-200 text-text-primary hover:border-primary hover:text-primary"
