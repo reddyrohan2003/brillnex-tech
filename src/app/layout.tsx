@@ -29,9 +29,9 @@ export default function RootLayout({
 }>) {
   const navItems = [
     { name: "Home", url: "/#home", icon: "home" },
-    { name: "About", url: "/#about", icon: "info" },
     { name: "Courses", url: "/courses", icon: "book-open" },
     { name: "Pricing", url: "/#pricing", icon: "credit-card" },
+    { name: "About", url: "/#about", icon: "info" },
     { name: "FAQ", url: "/#faq", icon: "help-circle" },
     { name: "Contact", url: "/#contact", icon: "mail" },
   ];
