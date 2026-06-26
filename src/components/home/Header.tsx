@@ -68,12 +68,14 @@ export default function Header() {
 
         {/* Desktop CTAs */}
         <div className="hidden lg:flex items-center gap-5">
-          <Link
-            href="/#contact"
+          <a
+            href={`https://wa.me/917204398855?text=${encodeURIComponent("Hello! I would like to make an enquiry about Brillnex Technologies and its services.")}`}
+            target="_blank"
+            rel="noopener noreferrer"
             className="text-gray-300 font-heading font-semibold hover:text-white transition-colors text-sm bg-white/5 px-5 py-2 rounded-md border border-white/10"
           >
             Enquire Now
-          </Link>
+          </a>
         </div>
 
         {/* Mobile Menu Toggle */}
@@ -100,13 +102,15 @@ export default function Header() {
             </Link>
           ))}
           <div className="flex flex-col gap-3 pt-4">
-            <Link
-              href="/#contact"
+            <a
+              href={`https://wa.me/917204398855?text=${encodeURIComponent("Hello! I would like to make an enquiry about Brillnex Technologies and its services.")}`}
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-center text-white font-heading font-semibold border border-white/20 hover:bg-white/5 rounded-md py-3 transition-colors"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               Enquire Now
-            </Link>
+            </a>
           </div>
         </div>
       )}
