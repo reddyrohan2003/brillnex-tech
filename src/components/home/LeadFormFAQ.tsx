@@ -28,12 +28,33 @@ const faqs = [
     answer: "You will build real-world applications depending on your track. Web developers build full-stack apps, data scientists analyze real datasets, and cloud engineers deploy scalable infrastructure."
   }
 ];
-
 export default function LeadFormFAQ() {
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [interest, setInterest] = useState("");
+  const [message, setMessage] = useState("");
 
   const toggleFaq = (index: number) => {
     setOpenFaqIndex(openFaqIndex === index ? null : index);
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!name || !phone || !interest) {
+      alert("Please fill in Name, Phone Number, and your area of Interest.");
+      return;
+    }
+    const textMessage = `Hello! I would like to request a callback with the following details:
+- Name: ${name}
+- Email: ${email || "Not Provided"}
+- Phone: ${phone}
+- Interested In: ${interest}
+- Message: ${message || "N/A"}`;
+
+    const url = `https://wa.me/917204398855?text=${encodeURIComponent(textMessage)}`;
+    window.open(url, "_blank", "noopener,noreferrer");
   };
 
   return (
@@ -48,12 +69,15 @@ export default function LeadFormFAQ() {
               <p className="text-text-secondary text-sm">Fill out the form below and our career counselor will get in touch with you shortly.</p>
             </div>
 
-            <form className="space-y-5" onSubmit={(e) => e.preventDefault()}>
+            <form className="space-y-5" onSubmit={handleSubmit}>
               <div>
                 <label className="block text-sm font-semibold text-text-primary mb-1.5" htmlFor="name">Full Name</label>
                 <input 
                   type="text" 
                   id="name" 
+                  required
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
                   className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all bg-white"
                   placeholder="John Doe"
                 />
@@ -65,7 +89,8 @@ export default function LeadFormFAQ() {
                   <input
                     type="email"
                     id="email"
-                    suppressHydrationWarning
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
                     className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all bg-white"
                     placeholder="john@example.com"
                   />
@@ -75,8 +100,11 @@ export default function LeadFormFAQ() {
                   <input 
                     type="tel" 
                     id="phone" 
+                    required
+                    value={phone}
+                    onChange={(e) => setPhone(e.target.value)}
                     className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all bg-white"
-                    placeholder="+1 (555) 000-0000"
+                    placeholder="7204398855"
                   />
                 </div>
               </div>
@@ -85,7 +113,9 @@ export default function LeadFormFAQ() {
                 <label className="block text-sm font-semibold text-text-primary mb-1.5" htmlFor="course">Interested In</label>
                 <select 
                   id="course" 
-                  defaultValue=""
+                  required
+                  value={interest}
+                  onChange={(e) => setInterest(e.target.value)}
                   className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all bg-white appearance-none"
                 >
                   <option value="" disabled>Select an option</option>
@@ -100,6 +130,8 @@ export default function LeadFormFAQ() {
                 <textarea 
                   id="message" 
                   rows={4}
+                  value={message}
+                  onChange={(e) => setMessage(e.target.value)}
                   className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all bg-white resize-none"
                   placeholder="Any specific questions or goals?"
                 />
