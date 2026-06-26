@@ -3,6 +3,7 @@
 import { useRef } from "react";
 import { motion } from "framer-motion";
 import { Star, Clock, BookOpen, ChevronLeft, ChevronRight } from "lucide-react";
+import Link from "next/link";
 
 export default function TrendingCourses() {
   const coursesRef = useRef<HTMLDivElement>(null);
@@ -319,6 +320,16 @@ export default function TrendingCourses() {
                 </div>
               </motion.div>
             ))}
+          </div>
+
+          <div className="mt-12 text-center">
+            <Link 
+              href="/courses" 
+              className="inline-flex items-center gap-2 px-8 py-3 bg-white border border-gray-200 hover:border-primary hover:text-primary rounded-xl font-semibold shadow-sm hover:shadow-md transition-all text-sm group cursor-pointer"
+            >
+              <span>View All Courses & Services</span>
+              <span className="group-hover:translate-x-1 transition-transform">→</span>
+            </Link>
           </div>
         </div>
 
