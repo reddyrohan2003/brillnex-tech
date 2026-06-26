@@ -82,18 +82,16 @@ export default function LeadFormFAQ() {
               </div>
 
               <div>
-                <label className="block text-sm font-semibold text-text-primary mb-1.5" htmlFor="course">Interested Course</label>
+                <label className="block text-sm font-semibold text-text-primary mb-1.5" htmlFor="course">Interested In</label>
                 <select 
                   id="course" 
                   defaultValue=""
                   className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all bg-white appearance-none"
                 >
-                  <option value="" disabled>Select a course</option>
-                  <option value="web">Full Stack Web Development</option>
-                  <option value="ai">Artificial Intelligence & ML</option>
-                  <option value="cloud">AWS Cloud Computing</option>
-                  <option value="data">Data Science Bootcamp</option>
-                  <option value="other">Other / Not Sure</option>
+                  <option value="" disabled>Select an option</option>
+                  <option value="service">Service</option>
+                  <option value="course">Course</option>
+                  <option value="programs">Programs</option>
                 </select>
               </div>
 
