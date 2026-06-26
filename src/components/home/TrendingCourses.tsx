@@ -132,15 +132,103 @@ export default function TrendingCourses() {
     <section id="courses" className="py-20 bg-background overflow-hidden">
       <div className="container mx-auto px-4 md:px-6">
         
-        {/* ROW 1: TRENDING COURSES */}
+        {/* ROW 1: OUR SPECIAL SERVICES */}
         <div className="mb-20">
+          <div className="flex flex-row items-center justify-between mb-10 gap-6">
+            <div>
+              <p className="text-primary font-semibold text-sm tracking-wider uppercase mb-3">Brillnex Support</p>
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold">Our Special Services</h2>
+            </div>
+            
+            {/* Scroll buttons for Services */}
+            <div className="flex items-center gap-3">
+              <button 
+                onClick={() => handleScroll(servicesRef, "left")}
+                aria-label="Previous Services"
+                className="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center text-gray-500 hover:bg-primary hover:text-white hover:border-primary transition-all active:scale-95 cursor-pointer"
+              >
+                <ChevronLeft size={20} />
+              </button>
+              <button 
+                onClick={() => handleScroll(servicesRef, "right")}
+                aria-label="Next Services"
+                className="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center text-gray-500 hover:bg-primary hover:text-white hover:border-primary transition-all active:scale-95 cursor-pointer"
+              >
+                <ChevronRight size={20} />
+              </button>
+            </div>
+          </div>
+
+          {/* Services horizontal slider container */}
+          <div 
+            ref={servicesRef}
+            className="flex gap-6 overflow-x-auto scrollbar-none scroll-smooth pb-6 -mx-4 px-4 md:-mx-6 md:px-6"
+          >
+            {services.map((service, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 15 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.4, delay: index * 0.05 }}
+                whileHover={{ y: -5 }}
+                className="flex-shrink-0 w-full sm:w-[calc((100%-24px)/2)] md:w-[calc((100%-48px)/3)] lg:w-[calc((100%-72px)/4)] bg-white border border-gray-100 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group"
+              >
+                {/* Service Image */}
+                <div className="w-full aspect-[16/9] relative overflow-hidden bg-gray-100">
+                  <img 
+                    src={service.image} 
+                    alt={service.title}
+                    loading="lazy"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-[10px] font-bold text-text-primary">
+                    {service.category}
+                  </div>
+                </div>
+
+                {/* Service Content */}
+                <div className="p-5 flex flex-col flex-grow">
+                  <div className="flex items-center gap-1 text-yellow-500 mb-2.5 text-xs font-medium">
+                    <Star size={14} className="fill-yellow-500" />
+                    <span>{service.rating}</span>
+                    <span className="text-gray-400">({service.reviews})</span>
+                  </div>
+                  
+                  <h3 className="text-sm sm:text-base font-bold mb-2 font-heading group-hover:text-primary transition-colors line-clamp-1">{service.title}</h3>
+                  <p className="text-text-secondary text-xs sm:text-[13px] leading-relaxed mb-4 flex-grow line-clamp-2">
+                    {service.desc}
+                  </p>
+
+                  <div className="flex items-center justify-between text-xs text-gray-500 mb-4 pb-4 border-b border-gray-100">
+                    <div className="flex items-center gap-1.5">
+                      <Clock size={14} />
+                      <span>{service.duration}</span>
+                    </div>
+                    <div className="flex items-center gap-1.5">
+                      <BookOpen size={14} />
+                      <span>{service.modulesText}</span>
+                    </div>
+                  </div>
+
+                  <Link href="#contact" className="w-full btn-secondary text-center py-2 text-xs sm:text-sm font-semibold">
+                    Contact Us
+                  </Link>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+
+        {/* ROW 2: TRENDING COURSES */}
+        <div>
           <div className="flex flex-row items-center justify-between mb-10 gap-6">
             <div>
               <p className="text-primary font-semibold text-sm tracking-wider uppercase mb-3">Top Programs</p>
               <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold">Trending Courses</h2>
             </div>
             
-            {/* Scroll buttons for Row 1 */}
+            {/* Scroll buttons for Courses */}
             <div className="flex items-center gap-3">
               <button 
                 onClick={() => handleScroll(coursesRef, "left")}
@@ -218,94 +306,6 @@ export default function TrendingCourses() {
 
                   <Link href="#contact" className="w-full btn-secondary text-center py-2 text-xs sm:text-sm font-semibold">
                     Enroll Now
-                  </Link>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-
-        {/* ROW 2: OUR SPECIAL SERVICES */}
-        <div>
-          <div className="flex flex-row items-center justify-between mb-10 gap-6">
-            <div>
-              <p className="text-primary font-semibold text-sm tracking-wider uppercase mb-3">Brillnex Support</p>
-              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold">Our Special Services</h2>
-            </div>
-            
-            {/* Scroll buttons for Row 2 */}
-            <div className="flex items-center gap-3">
-              <button 
-                onClick={() => handleScroll(servicesRef, "left")}
-                aria-label="Previous Services"
-                className="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center text-gray-500 hover:bg-primary hover:text-white hover:border-primary transition-all active:scale-95 cursor-pointer"
-              >
-                <ChevronLeft size={20} />
-              </button>
-              <button 
-                onClick={() => handleScroll(servicesRef, "right")}
-                aria-label="Next Services"
-                className="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center text-gray-500 hover:bg-primary hover:text-white hover:border-primary transition-all active:scale-95 cursor-pointer"
-              >
-                <ChevronRight size={20} />
-              </button>
-            </div>
-          </div>
-
-          {/* Services horizontal slider container */}
-          <div 
-            ref={servicesRef}
-            className="flex gap-6 overflow-x-auto scrollbar-none scroll-smooth pb-6 -mx-4 px-4 md:-mx-6 md:px-6"
-          >
-            {services.map((service, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 15 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.4, delay: index * 0.05 }}
-                whileHover={{ y: -5 }}
-                className="flex-shrink-0 w-full sm:w-[calc((100%-24px)/2)] md:w-[calc((100%-48px)/3)] lg:w-[calc((100%-72px)/4)] bg-white border border-gray-100 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group"
-              >
-                {/* Service Image */}
-                <div className="w-full aspect-[16/9] relative overflow-hidden bg-gray-100">
-                  <img 
-                    src={service.image} 
-                    alt={service.title}
-                    loading="lazy"
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                  <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-[10px] font-bold text-text-primary">
-                    {service.category}
-                  </div>
-                </div>
-
-                {/* Service Content */}
-                <div className="p-5 flex flex-col flex-grow">
-                  <div className="flex items-center gap-1 text-yellow-500 mb-2.5 text-xs font-medium">
-                    <Star size={14} className="fill-yellow-500" />
-                    <span>{service.rating}</span>
-                    <span className="text-gray-400">({service.reviews})</span>
-                  </div>
-                  
-                  <h3 className="text-sm sm:text-base font-bold mb-2 font-heading group-hover:text-primary transition-colors line-clamp-1">{service.title}</h3>
-                  <p className="text-text-secondary text-xs sm:text-[13px] leading-relaxed mb-4 flex-grow line-clamp-2">
-                    {service.desc}
-                  </p>
-
-                  <div className="flex items-center justify-between text-xs text-gray-500 mb-4 pb-4 border-b border-gray-100">
-                    <div className="flex items-center gap-1.5">
-                      <Clock size={14} />
-                      <span>{service.duration}</span>
-                    </div>
-                    <div className="flex items-center gap-1.5">
-                      <BookOpen size={14} />
-                      <span>{service.modulesText}</span>
-                    </div>
-                  </div>
-
-                  <Link href="#contact" className="w-full btn-secondary text-center py-2 text-xs sm:text-sm font-semibold">
-                    Contact Us
                   </Link>
                 </div>
               </motion.div>
