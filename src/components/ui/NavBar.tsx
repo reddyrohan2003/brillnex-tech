@@ -32,42 +32,55 @@ export function NavBar({ items, className }: NavBarProps) {
   // Scrollspy logic to automatically update active tab when scrolling
   useEffect(() => {
     const handleScroll = () => {
+      // If we are on a custom route page (like /courses), set that item active
+      if (typeof window !== "undefined") {
+        const pathname = window.location.pathname;
+        const currentItem = items.find(item => item.url === pathname);
+        if (currentItem) {
+          setActiveTab(currentItem.name);
+          return;
+        }
+      }
+
       // Find all sections corresponding to nav urls
       const sectionElements = items
         .map((item) => {
-          const id = item.url.replace("#", "")
-          if (!id) return null
-          return { name: item.name, element: document.getElementById(id) }
+          const hashIndex = item.url.indexOf("#");
+          const id = hashIndex !== -1 ? item.url.substring(hashIndex + 1) : null;
+          if (!id) return null;
+          return { name: item.name, element: document.getElementById(id) };
         })
-        .filter((item): item is { name: string; element: HTMLElement } => item !== null && item.element !== null)
+        .filter((item): item is { name: string; element: HTMLElement } => item !== null && item.element !== null);
 
-      let currentSection = items[0].name
+      if (sectionElements.length === 0) return;
+
+      let currentSection = sectionElements[0].name;
 
       for (const section of sectionElements) {
-        const top = section.element.offsetTop
+        const top = section.element.offsetTop;
         
         if (window.scrollY >= top - 150) {
-          currentSection = section.name
+          currentSection = section.name;
         }
       }
 
       // If we are at the very bottom, set active tab to Contact
       if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 50) {
-        const contactItem = items.find(item => item.url.toLowerCase().includes("contact"))
+        const contactItem = items.find(item => item.url.toLowerCase().includes("contact"));
         if (contactItem) {
-          currentSection = contactItem.name
+          currentSection = contactItem.name;
         }
       }
 
-      setActiveTab(currentSection)
-    }
+      setActiveTab(currentSection);
+    };
 
-    window.addEventListener("scroll", handleScroll)
+    window.addEventListener("scroll", handleScroll);
     // Run once on mount
-    handleScroll()
+    handleScroll();
 
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [items])
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [items]);
 
   return (
     <div

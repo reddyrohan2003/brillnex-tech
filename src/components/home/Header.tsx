@@ -7,12 +7,12 @@ import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const NAV_LINKS = [
-  { name: "Home", href: "#" },
-  { name: "About", href: "#about" },
-  { name: "Courses", href: "#courses" },
-  { name: "Pricing", href: "#pricing" },
-  { name: "FAQ", href: "#faq" },
-  { name: "Contact", href: "#contact" },
+  { name: "Home", href: "/" },
+  { name: "About", href: "/#about" },
+  { name: "Courses", href: "/courses" },
+  { name: "Pricing", href: "/#pricing" },
+  { name: "FAQ", href: "/#faq" },
+  { name: "Contact", href: "/#contact" },
 ];
 
 export default function Header() {
@@ -69,7 +69,7 @@ export default function Header() {
         {/* Desktop CTAs */}
         <div className="hidden lg:flex items-center gap-5">
           <Link
-            href="#contact"
+            href="/#contact"
             className="text-gray-300 font-heading font-semibold hover:text-white transition-colors text-sm bg-white/5 px-5 py-2 rounded-md border border-white/10"
           >
             Enquire Now
@@ -101,7 +101,7 @@ export default function Header() {
           ))}
           <div className="flex flex-col gap-3 pt-4">
             <Link
-              href="#contact"
+              href="/#contact"
               className="text-center text-white font-heading font-semibold border border-white/20 hover:bg-white/5 rounded-md py-3 transition-colors"
               onClick={() => setIsMobileMenuOpen(false)}
             >

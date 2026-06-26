@@ -37,11 +37,11 @@ export default function HeroSection() {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4">
-              <Link href="#courses" className="btn-primary flex items-center justify-center gap-2 group">
+              <Link href="/courses" className="btn-primary flex items-center justify-center gap-2 group">
                 Explore Courses
                 <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
               </Link>
-              <Link href="#contact" className="btn-secondary flex items-center justify-center">
+              <Link href="/#contact" className="btn-secondary flex items-center justify-center">
                 Contact Us
               </Link>
             </div>

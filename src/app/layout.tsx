@@ -28,12 +28,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   const navItems = [
-    { name: "Home", url: "#home", icon: "home" },
-    { name: "About", url: "#about", icon: "info" },
-    { name: "Courses", url: "#courses", icon: "book-open" },
-    { name: "Pricing", url: "#pricing", icon: "credit-card" },
-    { name: "FAQ", url: "#faq", icon: "help-circle" },
-    { name: "Contact", url: "#contact", icon: "mail" },
+    { name: "Home", url: "/#home", icon: "home" },
+    { name: "About", url: "/#about", icon: "info" },
+    { name: "Courses", url: "/courses", icon: "book-open" },
+    { name: "Pricing", url: "/#pricing", icon: "credit-card" },
+    { name: "FAQ", url: "/#faq", icon: "help-circle" },
+    { name: "Contact", url: "/#contact", icon: "mail" },
   ];
 
   return (
