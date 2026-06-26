@@ -314,7 +314,7 @@ export default function CoursesPage() {
         ) : (
           <motion.div 
             layout
-            className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+            className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-5"
           >
             <AnimatePresence mode="popLayout">
               {filteredItems.map((item) => (
@@ -325,11 +325,10 @@ export default function CoursesPage() {
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.95 }}
                   transition={{ duration: 0.3 }}
-                  whileHover={{ y: -6 }}
-                  className="bg-white border border-gray-100 rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group h-full"
+                  className="bg-white border border-gray-100 rounded-2xl overflow-hidden shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col group h-full"
                 >
                   {/* Card Image */}
-                  <div className="w-full aspect-[16/10] relative overflow-hidden bg-gray-50">
+                  <div className="w-full aspect-[16/9] relative overflow-hidden bg-gray-50">
                     <img
                       src={item.image}
                       alt={item.title}
@@ -337,53 +336,50 @@ export default function CoursesPage() {
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                     {/* Badge for Course / Service Type */}
-                    <div className="absolute top-4 left-4 bg-white/95 backdrop-blur-sm px-3.5 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-wider text-text-primary flex items-center gap-1.5 shadow-sm">
-                      <span className={`w-2 h-2 rounded-full ${item.type === "course" ? "bg-primary" : "bg-emerald-500"}`} />
+                    <div className="absolute top-2 left-2 bg-white/95 backdrop-blur-sm px-2 py-1 rounded-full text-[9px] font-bold uppercase tracking-wider text-text-primary flex items-center gap-1 shadow-sm">
+                      <span className={`w-1.5 h-1.5 rounded-full ${item.type === "course" ? "bg-primary" : "bg-emerald-500"}`} />
                       <span>{item.type}</span>
                     </div>
 
-                    <div className="absolute bottom-4 right-4 bg-text-primary/80 backdrop-blur-sm text-white px-3 py-1 rounded-full text-xs font-semibold">
+                    <div className="absolute bottom-2 right-2 bg-text-primary/80 backdrop-blur-sm text-white px-2 py-0.5 rounded-full text-[10px] font-semibold">
                       {item.category}
                     </div>
                   </div>
 
                   {/* Card Content */}
-                  <div className="p-6 md:p-8 flex flex-col flex-grow">
-                    <div className="flex items-center gap-1 text-yellow-500 mb-3 text-xs font-semibold">
-                      <Star size={14} className="fill-yellow-500" />
+                  <div className="p-4 flex flex-col flex-grow">
+                    <div className="flex items-center gap-1 text-yellow-500 mb-1.5 text-[10px] font-semibold">
+                      <Star size={11} className="fill-yellow-500" />
                       <span>{item.rating}</span>
-                      <span className="text-gray-400 font-medium">({item.reviews} reviews)</span>
+                      <span className="text-gray-400 font-medium">({item.reviews})</span>
                     </div>
 
-                    <h3 className="text-lg md:text-xl font-bold mb-3 font-heading group-hover:text-primary transition-colors line-clamp-1">
+                    <h3 className="text-xs sm:text-sm font-bold mb-1.5 font-heading group-hover:text-primary transition-colors line-clamp-1">
                       {item.title}
                     </h3>
                     
-                    <p className="text-text-secondary text-sm leading-relaxed mb-6 flex-grow line-clamp-3">
+                    <p className="text-text-secondary text-[11px] leading-relaxed mb-3 flex-grow line-clamp-2">
                       {item.desc}
                     </p>
 
-                    {/* Features checklist */}
-                    <div className="mb-6">
-                      <p className="text-xs font-bold text-text-primary uppercase tracking-wide mb-2.5">Key Highlights</p>
-                      <ul className="grid grid-cols-2 gap-2 text-xs text-text-secondary">
-                        {item.features.map((feat, idx) => (
-                          <li key={idx} className="flex items-center gap-1.5">
-                            <span className="text-primary font-bold text-sm">✓</span>
-                            <span className="truncate">{feat}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
+                    {/* Features - compact 2 col */}
+                    <ul className="grid grid-cols-2 gap-x-1.5 gap-y-1 text-[10px] text-text-secondary mb-3">
+                      {item.features.slice(0, 4).map((feat, idx) => (
+                        <li key={idx} className="flex items-center gap-1">
+                          <span className="text-primary font-bold text-[10px]">✓</span>
+                          <span className="truncate">{feat}</span>
+                        </li>
+                      ))}
+                    </ul>
 
                     {/* Card Footer Detail */}
-                    <div className="flex items-center justify-between text-xs text-gray-500 mb-6 pt-4 border-t border-gray-50">
-                      <div className="flex items-center gap-1.5 font-medium">
-                        <Clock size={14} className="text-gray-400" />
+                    <div className="flex items-center justify-between text-[10px] text-gray-500 mb-3 pt-2 border-t border-gray-50">
+                      <div className="flex items-center gap-1 font-medium">
+                        <Clock size={11} className="text-gray-400" />
                         <span>{item.duration}</span>
                       </div>
-                      <div className="flex items-center gap-1.5 font-medium">
-                        <BookOpen size={14} className="text-gray-400" />
+                      <div className="flex items-center gap-1 font-medium">
+                        <BookOpen size={11} className="text-gray-400" />
                         <span>{item.metaText}</span>
                       </div>
                     </div>
@@ -393,10 +389,9 @@ export default function CoursesPage() {
                       href={getWhatsAppLink(item)}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-full btn-secondary text-center py-3 text-sm font-semibold flex items-center justify-center gap-2 group-hover:bg-primary group-hover:text-white group-hover:border-primary transition-all duration-300"
+                      className="w-full text-center py-2 text-[11px] sm:text-xs font-semibold rounded-lg border border-primary text-primary bg-white hover:bg-primary hover:text-white transition-all duration-300 relative z-10 block"
                     >
-                      <span>{item.type === "course" ? "Enroll Now" : "Request Service"}</span>
-                      <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+                      {item.type === "course" ? "Enroll Now" : "Request Service"}
                     </a>
                   </div>
                 </motion.div>
