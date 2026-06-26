@@ -28,7 +28,7 @@ export default function Footer() {
               </div>
             </Link>
             <p className="text-gray-400 text-sm leading-relaxed mb-6">
-              [Placeholder] Brillnex is a professional technology training and upskilling company helping students and professionals acquire job-ready skills.
+              Empowering the next generation of tech leaders. Brillnex Technologies provides industry-grade upskilling programs and custom digital development solutions to accelerate your career and business growth.
             </p>
           </div>
 
