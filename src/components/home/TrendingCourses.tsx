@@ -223,6 +223,16 @@ export default function TrendingCourses() {
               </motion.div>
             ))}
           </div>
+
+          <div className="flex justify-end mt-4 px-4 md:px-0">
+            <Link 
+              href="/courses?tab=services" 
+              className="inline-flex items-center gap-1.5 text-primary hover:text-blue-700 font-heading font-semibold text-sm transition-colors group cursor-pointer"
+            >
+              <span>View All Services</span>
+              <span className="group-hover:translate-x-1 transition-transform">→</span>
+            </Link>
+          </div>
         </div>
 
         {/* ROW 2: TRENDING COURSES */}
@@ -322,12 +332,12 @@ export default function TrendingCourses() {
             ))}
           </div>
 
-          <div className="mt-12 text-center">
+          <div className="flex justify-end mt-4 px-4 md:px-0">
             <Link 
-              href="/courses" 
-              className="inline-flex items-center gap-2 px-8 py-3 bg-white border border-gray-200 hover:border-primary hover:text-primary rounded-xl font-semibold shadow-sm hover:shadow-md transition-all text-sm group cursor-pointer"
+              href="/courses?tab=courses" 
+              className="inline-flex items-center gap-1.5 text-primary hover:text-blue-700 font-heading font-semibold text-sm transition-colors group cursor-pointer"
             >
-              <span>View All Courses & Services</span>
+              <span>View All Courses</span>
               <span className="group-hover:translate-x-1 transition-transform">→</span>
             </Link>
           </div>

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Star, Clock, BookOpen, Search, ArrowRight, Sparkles } from "lucide-react";
 
@@ -158,6 +158,16 @@ export default function CoursesPage() {
   const [activeTab, setActiveTab] = useState<"all" | "courses" | "services">("all");
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState<string>("All");
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const params = new URLSearchParams(window.location.search);
+      const tab = params.get("tab");
+      if (tab === "courses" || tab === "services") {
+        setActiveTab(tab);
+      }
+    }
+  }, []);
 
   // Get unique categories based on selected tab
   const categories = useMemo(() => {
