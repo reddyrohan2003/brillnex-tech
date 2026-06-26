@@ -110,16 +110,19 @@ export default function PricingPlans() {
                 ))}
               </ul>
               
-              <button 
+              <a 
+                href={`https://wa.me/917204398855?text=${encodeURIComponent(`Hello! I am interested in the *${plan.name}* learning path. Please provide more details.`)}`}
+                target="_blank"
+                rel="noopener noreferrer"
                 className={cn(
-                  "w-full py-3 rounded-lg font-heading font-semibold transition-all",
+                  "w-full block text-center py-3 rounded-lg font-heading font-semibold transition-all",
                   plan.isRecommended 
                     ? "bg-primary text-white hover:bg-blue-700 shadow-lg shadow-primary/25" 
                     : "bg-white border border-gray-200 text-text-primary hover:border-primary hover:text-primary"
                 )}
               >
                 Get Started
-              </button>
+              </a>
             </motion.div>
           ))}
         </div>

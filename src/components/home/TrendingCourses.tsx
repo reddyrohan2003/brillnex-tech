@@ -3,7 +3,6 @@
 import { useRef } from "react";
 import { motion } from "framer-motion";
 import { Star, Clock, BookOpen, ChevronLeft, ChevronRight } from "lucide-react";
-import Link from "next/link";
 
 export default function TrendingCourses() {
   const coursesRef = useRef<HTMLDivElement>(null);
@@ -211,9 +210,14 @@ export default function TrendingCourses() {
                     </div>
                   </div>
 
-                  <Link href="#contact" className="w-full btn-secondary text-center py-2 text-xs sm:text-sm font-semibold">
+                  <a 
+                    href={`https://wa.me/917204398855?text=${encodeURIComponent(`Hello! I would like to inquire about your *${service.title}* service. Please provide more details.`)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full btn-secondary text-center py-2 text-xs sm:text-sm font-semibold block"
+                  >
                     Contact Us
-                  </Link>
+                  </a>
                 </div>
               </motion.div>
             ))}
@@ -304,9 +308,14 @@ export default function TrendingCourses() {
                     </li>
                   </ul>
 
-                  <Link href="#contact" className="w-full btn-secondary text-center py-2 text-xs sm:text-sm font-semibold">
+                  <a 
+                    href={`https://wa.me/917204398855?text=${encodeURIComponent(`Hello! I want to enroll in the *${course.title}* course. Please share details on fees and batch schedules.`)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full btn-secondary text-center py-2 text-xs sm:text-sm font-semibold block"
+                  >
                     Enroll Now
-                  </Link>
+                  </a>
                 </div>
               </motion.div>
             ))}
