@@ -124,9 +124,8 @@ export default function PricingPlans() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              whileHover={{ y: -8 }}
               className={cn(
-                "relative bg-white rounded-3xl p-8 transition-all duration-300 flex flex-col justify-between h-full group",
+                "relative bg-white rounded-3xl p-8 transition-all duration-300 flex flex-col justify-between h-full hover:-translate-y-2",
                 plan.isRecommended 
                   ? "border-2 border-primary shadow-2xl scale-100 xl:scale-105 z-10" 
                   : "border border-gray-100 shadow-md hover:shadow-xl"
@@ -175,7 +174,7 @@ export default function PricingPlans() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className={cn(
-                  "w-full block text-center py-3 rounded-lg font-heading font-semibold transition-all cursor-pointer mt-auto",
+                  "w-full block text-center py-3 rounded-lg font-heading font-semibold transition-all cursor-pointer mt-auto relative z-10",
                   plan.isRecommended 
                     ? "bg-primary text-white hover:bg-blue-700 shadow-lg shadow-primary/25" 
                     : "bg-white border border-gray-200 text-text-primary hover:border-primary hover:text-primary"
