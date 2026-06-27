@@ -425,6 +425,76 @@ const courses = [
     image: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=600&h=340&fit=crop",
     features: ["Project Estimation Sheets", "CPM/PERT Scheduling Method", "Primavera P6 / MS Project", "Site Quality & Safety Audits"],
     color: "from-teal-500 to-green-600"
+  },
+  {
+    id: "ar-vr",
+    title: "AR & VR Development",
+    type: "course",
+    category: "CSE",
+    desc: "Build immersive virtual and augmented reality experiences using Unity, Unreal Engine, C# scripting, and 3D assets.",
+    rating: 4.8,
+    reviews: 290,
+    duration: "4 Months",
+    metaText: "16 Modules",
+    image: "https://images.unsplash.com/photo-1614850523459-c2f4c699c52e?w=600&h=340&fit=crop",
+    features: ["Unity & C# Scripting", "3D Modeling & Assets", "Oculus & WebXR SDKs", "Interactive VR Projects"],
+    color: "from-fuchsia-500 to-purple-600"
+  },
+  {
+    id: "cloud-computing",
+    title: "Cloud Computing",
+    type: "course",
+    category: "CSE",
+    desc: "Master cloud environments across AWS, Azure, and Google Cloud, covering virtualization, architecture, and network configuration.",
+    rating: 4.9,
+    reviews: 680,
+    duration: "4 Months",
+    metaText: "18 Modules",
+    image: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=600&h=340&fit=crop",
+    features: ["Multi-Cloud Setup", "Virtualization & Networks", "Cloud Storage & Databases", "Security & Compliance"],
+    color: "from-blue-500 to-sky-600"
+  },
+  {
+    id: "data-analytics",
+    title: "Data Analytics Specialization",
+    type: "course",
+    category: "CSE",
+    desc: "Analyze complex business datasets using SQL databases, Excel spreadsheets, PowerBI interactive reports, and statistical analytics.",
+    rating: 4.8,
+    reviews: 490,
+    duration: "4 Months",
+    metaText: "16 Modules",
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=340&fit=crop",
+    features: ["Data Cleaning & Prepping", "Excel Advanced Analytics", "PowerBI & Dashboards", "Statistical Modeling"],
+    color: "from-teal-500 to-emerald-600"
+  },
+  {
+    id: "dsa",
+    title: "Data Structures & Algorithms (DSA)",
+    type: "course",
+    category: "CSE",
+    desc: "Ace technical coding interviews. Master arrays, lists, trees, graphs, sorting, searching, and dynamic programming in C++/Java.",
+    rating: 4.9,
+    reviews: 1140,
+    duration: "5 Months",
+    metaText: "20 Modules",
+    image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&h=340&fit=crop",
+    features: ["Complex Data Structures", "Sorting & Searching Algos", "Dynamic Programming", "Mock Interview Practice"],
+    color: "from-indigo-600 to-violet-500"
+  },
+  {
+    id: "devops",
+    title: "DevOps & CI/CD Pipeline",
+    type: "course",
+    category: "CSE",
+    desc: "Automate system deployments. Master Docker containerization, Kubernetes orchestration, Jenkins pipelines, and IaC using Terraform.",
+    rating: 4.8,
+    reviews: 750,
+    duration: "4 Months",
+    metaText: "18 Modules",
+    image: "https://images.unsplash.com/photo-1486006920555-c77dce18193b?w=600&h=340&fit=crop",
+    features: ["Docker & Kubernetes", "Jenkins CI/CD Pipelines", "Terraform Infrastructure", "Monitoring & Logging Tools"],
+    color: "from-orange-500 to-red-600"
   }
 ];
 
