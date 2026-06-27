@@ -14,7 +14,7 @@ if (typeof window !== "undefined") {
 }
 
 // -------------------------------------------------------------------------
-// 1. THEME-ADAPTIVE INLINE STYLES
+// 1. THEME-ADAPTIVE INLINE STYLES (Configured for Premium Deep Blue Theme)
 // -------------------------------------------------------------------------
 const STYLES = `
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&display=swap');
@@ -23,24 +23,24 @@ const STYLES = `
   font-family: 'Plus Jakarta Sans', sans-serif;
   -webkit-font-smoothing: antialiased;
   
-  /* Dynamic Variables using standard shadcn/tailwind v4 tokens */
-  --pill-bg-1: color-mix(in oklch, var(--foreground) 3%, transparent);
-  --pill-bg-2: color-mix(in oklch, var(--foreground) 1%, transparent);
-  --pill-shadow: color-mix(in oklch, var(--background) 50%, transparent);
-  --pill-highlight: color-mix(in oklch, var(--foreground) 10%, transparent);
-  --pill-inset-shadow: color-mix(in oklch, var(--background) 80%, transparent);
-  --pill-border: color-mix(in oklch, var(--foreground) 8%, transparent);
+  /* Deep Blue Color System */
+  --pill-bg-1: rgba(255, 255, 255, 0.04);
+  --pill-bg-2: rgba(255, 255, 255, 0.01);
+  --pill-shadow: rgba(0, 0, 0, 0.4);
+  --pill-highlight: rgba(255, 255, 255, 0.08);
+  --pill-inset-shadow: rgba(0, 0, 0, 0.6);
+  --pill-border: rgba(255, 255, 255, 0.06);
   
-  --pill-bg-1-hover: color-mix(in oklch, var(--foreground) 8%, transparent);
-  --pill-bg-2-hover: color-mix(in oklch, var(--foreground) 2%, transparent);
-  --pill-border-hover: color-mix(in oklch, var(--foreground) 20%, transparent);
-  --pill-shadow-hover: color-mix(in oklch, var(--background) 70%, transparent);
-  --pill-highlight-hover: color-mix(in oklch, var(--foreground) 20%, transparent);
+  --pill-bg-1-hover: rgba(255, 255, 255, 0.1);
+  --pill-bg-2-hover: rgba(255, 255, 255, 0.03);
+  --pill-border-hover: rgba(255, 255, 255, 0.2);
+  --pill-shadow-hover: rgba(0, 0, 0, 0.5);
+  --pill-highlight-hover: rgba(255, 255, 255, 0.15);
 }
 
 @keyframes footer-breathe {
-  0% { transform: translate(-50%, -50%) scale(1); opacity: 0.6; }
-  100% { transform: translate(-50%, -50%) scale(1.1); opacity: 1; }
+  0% { transform: translate(-50%, -50%) scale(1); opacity: 0.4; }
+  100% { transform: translate(-50%, -50%) scale(1.15); opacity: 0.8; }
 }
 
 @keyframes footer-scroll-marquee {
@@ -49,8 +49,8 @@ const STYLES = `
 }
 
 @keyframes footer-heartbeat {
-  0%, 100% { transform: scale(1); filter: drop-shadow(0 0 5px color-mix(in oklch, var(--destructive) 50%, transparent)); }
-  15%, 45% { transform: scale(1.2); filter: drop-shadow(0 0 10px color-mix(in oklch, var(--destructive) 80%, transparent)); }
+  0%, 100% { transform: scale(1); filter: drop-shadow(0 0 5px rgba(239, 68, 68, 0.5)); }
+  15%, 45% { transform: scale(1.2); filter: drop-shadow(0 0 10px rgba(239, 68, 68, 0.8)); }
   30% { transform: scale(1); }
 }
 
@@ -66,22 +66,22 @@ const STYLES = `
   animation: footer-heartbeat 2s cubic-bezier(0.25, 1, 0.5, 1) infinite;
 }
 
-/* Theme-adaptive Grid Background */
+/* Deep Blue Theme Grid Background */
 .footer-bg-grid {
   background-size: 60px 60px;
   background-image: 
-    linear-gradient(to right, color-mix(in oklch, var(--foreground) 3%, transparent) 1px, transparent 1px),
-    linear-gradient(to bottom, color-mix(in oklch, var(--foreground) 3%, transparent) 1px, transparent 1px);
+    linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
   mask-image: linear-gradient(to bottom, transparent, black 30%, black 70%, transparent);
   -webkit-mask-image: linear-gradient(to bottom, transparent, black 30%, black 70%, transparent);
 }
 
-/* Theme-adaptive Aurora Glow */
+/* Aurora Glow blending brand colors (Blue #0F52BA & Orange #FF6B35) */
 .footer-aurora {
   background: radial-gradient(
     circle at 50% 50%, 
-    color-mix(in oklch, var(--primary) 15%, transparent) 0%, 
-    color-mix(in oklch, var(--secondary) 15%, transparent) 40%, 
+    rgba(15, 82, 186, 0.25) 0%, 
+    rgba(255, 107, 53, 0.1) 40%, 
     transparent 70%
   );
 }
@@ -105,7 +105,6 @@ const STYLES = `
   box-shadow: 
       0 20px 40px -10px var(--pill-shadow-hover), 
       inset 0 1px 1px var(--pill-highlight-hover);
-  color: var(--foreground);
 }
 
 /* Giant Background Text Masking */
@@ -115,24 +114,24 @@ const STYLES = `
   font-weight: 900;
   letter-spacing: -0.05em;
   color: transparent;
-  -webkit-text-stroke: 1px color-mix(in oklch, var(--foreground) 5%, transparent);
-  background: linear-gradient(180deg, color-mix(in oklch, var(--foreground) 10%, transparent) 0%, transparent 60%);
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.03);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0%, transparent 60%);
   -webkit-background-clip: text;
   background-clip: text;
 }
 
 /* Metallic Text Glow */
 .footer-text-glow {
-  background: linear-gradient(180deg, var(--foreground) 0%, color-mix(in oklch, var(--foreground) 40%, transparent) 100%);
+  background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.6) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  filter: drop-shadow(0px 0px 20px color-mix(in oklch, var(--foreground) 15%, transparent));
+  filter: drop-shadow(0px 0px 20px rgba(15, 82, 186, 0.3));
 }
 `;
 
 // -------------------------------------------------------------------------
-// 2. MAGNETIC BUTTON PRIMITIVE (Zero Dependency)
+// 2. MAGNETIC BUTTON PRIMITIVE
 // -------------------------------------------------------------------------
 export type MagneticButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & 
   React.AnchorHTMLAttributes<HTMLAnchorElement> & {
@@ -231,7 +230,6 @@ export function CinematicFooter() {
     if (typeof window === "undefined") return;
     if (!wrapperRef.current) return;
 
-    // React strict mode compatible GSAP context cleanup
     const ctx = gsap.context(() => {
       // Background Parallax
       gsap.fromTo(
@@ -291,8 +289,8 @@ export function CinematicFooter() {
         className="relative h-screen w-full"
         style={{ clipPath: "polygon(0% 0, 100% 0%, 100% 100%, 0 100%)" }}
       >
-        {/* The actual footer stays fixed to the viewport underneath everything */}
-        <footer className="fixed bottom-0 left-0 flex h-screen w-full flex-col justify-between overflow-hidden bg-background text-foreground cinematic-footer-wrapper">
+        {/* Deep blue gradient background matching the brand color palette */}
+        <footer className="fixed bottom-0 left-0 flex h-screen w-full flex-col justify-between overflow-hidden bg-gradient-to-b from-[#061B48] to-[#020A1E] text-white cinematic-footer-wrapper">
           
           {/* Ambient Light & Grid Background */}
           <div className="footer-aurora absolute left-1/2 top-1/2 h-[60vh] w-[80vw] -translate-x-1/2 -translate-y-1/2 animate-footer-breathe rounded-[50%] blur-[80px] pointer-events-none z-0" />
@@ -307,8 +305,8 @@ export function CinematicFooter() {
           </div>
 
           {/* 1. Diagonal Sleek Marquee (Top of footer) */}
-          <div className="absolute top-12 left-0 w-full overflow-hidden border-y border-border/50 bg-background/60 backdrop-blur-md py-4 z-10 -rotate-2 scale-110 shadow-2xl">
-            <div className="flex w-max animate-footer-scroll-marquee text-xs md:text-sm font-bold tracking-[0.3em] text-muted-foreground uppercase">
+          <div className="absolute top-12 left-0 w-full overflow-hidden border-y border-white/10 bg-black/35 backdrop-blur-md py-4 z-10 -rotate-2 scale-110 shadow-2xl">
+            <div className="flex w-max animate-footer-scroll-marquee text-xs md:text-sm font-bold tracking-[0.3em] text-white/50 uppercase">
               <MarqueeItem />
               <MarqueeItem />
             </div>
@@ -332,28 +330,28 @@ export function CinematicFooter() {
                   href="https://wa.me/917204398855?text=Hello%20Brillnex,%20I%20would%20like%20to%20enquire%20about%20your%20training%20programs." 
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="footer-glass-pill px-10 py-5 rounded-full text-foreground font-bold text-sm md:text-base flex items-center gap-3 group"
+                  className="footer-glass-pill px-10 py-5 rounded-full text-white font-bold text-sm md:text-base flex items-center gap-3 group"
                 >
-                  <MessageCircle className="w-6 h-6 text-green-500 group-hover:scale-110 transition-transform" />
+                  <MessageCircle className="w-6 h-6 text-green-400 group-hover:scale-110 transition-transform" />
                   Chat with Counselor
                 </MagneticButton>
                 
-                <MagneticButton as="a" href="/courses" className="footer-glass-pill px-10 py-5 rounded-full text-foreground font-bold text-sm md:text-base flex items-center gap-3 group">
-                  <BookOpen className="w-6 h-6 text-primary group-hover:scale-110 transition-transform" />
+                <MagneticButton as="a" href="/courses" className="footer-glass-pill px-10 py-5 rounded-full text-white font-bold text-sm md:text-base flex items-center gap-3 group">
+                  <BookOpen className="w-6 h-6 text-[#FF6B35] group-hover:scale-110 transition-transform" />
                   Explore All Courses
                 </MagneticButton>
               </div>
 
               {/* Secondary Text Links */}
               <div className="flex flex-wrap justify-center gap-3 md:gap-6 w-full mt-2">
-                <Link href="/privacy" className="footer-glass-pill px-6 py-3 rounded-full text-muted-foreground font-medium text-xs md:text-sm hover:text-foreground">
+                <Link href="/privacy" className="footer-glass-pill px-6 py-3 rounded-full text-white/70 font-medium text-xs md:text-sm hover:text-white">
                   Privacy Policy
                 </Link>
-                <Link href="/terms" className="footer-glass-pill px-6 py-3 rounded-full text-muted-foreground font-medium text-xs md:text-sm hover:text-foreground">
+                <Link href="/terms" className="footer-glass-pill px-6 py-3 rounded-full text-white/70 font-medium text-xs md:text-sm hover:text-white">
                   Terms of Service
                 </Link>
-                <a href="mailto:info@brillnextech.com" className="footer-glass-pill px-6 py-3 rounded-full text-muted-foreground font-medium text-xs md:text-sm hover:text-foreground flex items-center gap-2">
-                  <Mail size={14} /> Email Support
+                <a href="mailto:info@brillnextech.com" className="footer-glass-pill px-6 py-3 rounded-full text-white/70 font-medium text-xs md:text-sm hover:text-white flex items-center gap-2">
+                  <Mail size={14} className="text-primary" /> Email Support
                 </a>
               </div>
             </div>
@@ -363,22 +361,22 @@ export function CinematicFooter() {
           <div className="relative z-20 w-full pb-8 px-6 md:px-12 flex flex-col md:flex-row items-center justify-between gap-6">
             
             {/* Copyright */}
-            <div className="text-muted-foreground text-[10px] md:text-xs font-semibold tracking-widest uppercase order-2 md:order-1">
+            <div className="text-white/60 text-[10px] md:text-xs font-semibold tracking-widest uppercase order-2 md:order-1">
               © {new Date().getFullYear()} Brillnex. All rights reserved.
             </div>
 
             {/* "Made with Love" Badge */}
-            <div className="footer-glass-pill px-6 py-3 rounded-full flex items-center gap-2 order-1 md:order-2 cursor-default border-border/50">
-              <span className="text-muted-foreground text-[10px] md:text-xs font-bold uppercase tracking-widest">Designed with</span>
-              <span className="animate-footer-heartbeat text-sm md:text-base text-destructive">❤</span>
-              <span className="text-muted-foreground text-[10px] md:text-xs font-bold uppercase tracking-widest">by</span>
-              <span className="text-foreground font-black text-xs md:text-sm tracking-normal ml-1">Brillnex</span>
+            <div className="footer-glass-pill px-6 py-3 rounded-full flex items-center gap-2 order-1 md:order-2 cursor-default border-white/10">
+              <span className="text-white/60 text-[10px] md:text-xs font-bold uppercase tracking-widest">Designed with</span>
+              <span className="animate-footer-heartbeat text-sm md:text-base text-red-500">❤</span>
+              <span className="text-white/60 text-[10px] md:text-xs font-bold uppercase tracking-widest">by</span>
+              <span className="text-white font-black text-xs md:text-sm tracking-normal ml-1">Brillnex</span>
             </div>
 
             {/* Back to top */}
             <button
               onClick={scrollToTop}
-              className="w-12 h-12 rounded-full footer-glass-pill flex items-center justify-center text-muted-foreground hover:text-foreground group order-3 cursor-pointer"
+              className="w-12 h-12 rounded-full footer-glass-pill flex items-center justify-center text-white/60 hover:text-white group order-3 cursor-pointer"
             >
               <ArrowUp className="w-5 h-5 transform group-hover:-translate-y-1.5 transition-transform duration-300" />
             </button>
