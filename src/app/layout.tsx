@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Poppins, Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/home/Header";
-import Footer from "@/components/home/Footer";
+import { CinematicFooter } from "@/components/ui/motion-footer";
 import { NavBar } from "@/components/ui/NavBar";
 
 const poppins = Poppins({
@@ -41,10 +41,10 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col font-sans antialiased text-secondary bg-background">
         <Header />
         <NavBar items={navItems} />
-        <main className="flex-grow">
+        <main className="flex-grow relative z-10 bg-background shadow-lg rounded-b-[2.5rem] border-b border-border/10 pb-8">
           {children}
         </main>
-        <Footer />
+        <CinematicFooter />
       </body>
     </html>
   );
