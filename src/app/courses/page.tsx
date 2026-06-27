@@ -4,105 +4,20 @@ import { useState, useMemo, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Star, Clock, BookOpen, Search, ArrowRight, Sparkles } from "lucide-react";
 
-// Full catalog of courses
+// Full catalog of courses (36 courses categorized according to their type)
 const courses = [
+  // 1. CSE
   {
-    id: "web-dev",
-    title: "Full Stack Web Development",
+    id: "python-specialization",
+    title: "Python Programming Specialization",
     type: "course",
     category: "CSE",
-    desc: "Master the MERN stack (MongoDB, Express, React, Node.js) with real-world projects and learn to deploy scalable, modern web applications.",
-    rating: 4.9,
-    reviews: 1240,
-    duration: "6 Months",
-    metaText: "24 Modules",
-    image: "https://images.unsplash.com/photo-1627398242454-45a1465c2479?w=600&h=340&fit=crop",
-    features: ["MERN Stack", "Next.js & Tailwind CSS", "REST APIs & Databases", "CI/CD & Cloud Deployment"],
-    color: "from-blue-500 to-indigo-600"
-  },
-  {
-    id: "ml-bootcamp",
-    title: "Machine Learning Bootcamp",
-    type: "course",
-    category: "CSE",
-    desc: "Learn Python, data prep, regression, classification, clustering, ensemble methods, and deploying ML pipelines.",
+    desc: "Go from basics to advanced Python scripts, automation, data structures, and building web scrapers and scripts.",
     rating: 4.8,
-    reviews: 720,
-    duration: "6 Months",
-    metaText: "22 Modules",
-    image: "https://images.unsplash.com/photo-1527474305487-b87b222841cc?w=600&h=340&fit=crop",
-    features: ["Supervised Learning", "Regression & Classification", "Scikit-Learn & Pandas", "Model Deployment"],
-    color: "from-purple-500 to-indigo-600"
-  },
-  {
-    id: "ai-ml",
-    title: "Artificial Intelligence & DL",
-    type: "course",
-    category: "CSE",
-    desc: "Explore neural networks, computer vision, natural language processing, transformers, and generative AI systems.",
-    rating: 4.9,
-    reviews: 980,
-    duration: "8 Months",
-    metaText: "32 Modules",
-    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600&h=340&fit=crop",
-    features: ["Deep Neural Networks", "Natural Language Processing", "Computer Vision", "Generative AI & LLMs"],
-    color: "from-purple-500 to-pink-600"
-  },
-  {
-    id: "data-science",
-    title: "Data Science Bootcamp",
-    type: "course",
-    category: "CSE",
-    desc: "Master SQL, Pandas, NumPy, data cleaning, exploratory data analysis, and creating business dashboards in Tableau.",
-    rating: 4.7,
-    reviews: 840,
-    duration: "6 Months",
-    metaText: "20 Modules",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=340&fit=crop",
-    features: ["Data Cleaning & EDA", "Statistical Inference", "SQL & Database Queries", "Tableau & PowerBI Reports"],
-    color: "from-emerald-500 to-teal-600"
-  },
-  {
-    id: "cyber-security",
-    title: "Cyber Security & Ethical Hacking",
-    type: "course",
-    category: "CSE",
-    desc: "Learn system penetration testing, network defense, threat assessment, cryptography, and safety audits.",
-    rating: 4.8,
-    reviews: 650,
-    duration: "5 Months",
-    metaText: "18 Modules",
-    image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=600&h=340&fit=crop",
-    features: ["Ethical Hacking", "Network Vulnerability", "Penetration Testing", "Security Audits & Compliance"],
-    color: "from-red-500 to-rose-600"
-  },
-  {
-    id: "app-development",
-    title: "Mobile App Development",
-    type: "course",
-    category: "CSE",
-    desc: "Create high-performance cross-platform iOS and Android apps using React Native, Flutter, and cloud backends.",
-    rating: 4.8,
-    reviews: 580,
-    duration: "5 Months",
-    metaText: "20 Modules",
-    image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=600&h=340&fit=crop",
-    features: ["React Native & Flutter", "iOS & Android Builds", "State Management", "App Store Publishing"],
-    color: "from-violet-500 to-fuchsia-600"
-  },
-  {
-    id: "aws-cloud",
-    title: "AWS Cloud Solutions Architect",
-    type: "course",
-    category: "CSE",
-    desc: "Prepare for AWS Certification. Learn cloud infrastructure design, virtual networks, scaling, and database setups.",
-    rating: 4.9,
-    reviews: 1560,
-    duration: "4 Months",
-    metaText: "18 Modules",
-    image: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=600&h=340&fit=crop",
-    features: ["EC2, S3 & VPC Setup", "Cloud Security & IAM", "Serverless with Lambda", "DevOps & CloudFormation"],
-    color: "from-orange-500 to-amber-600"
+    reviews: 890,
+    image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=600&h=340&fit=crop",
+    features: ["Syntax & Basic Structures", "File Handling & Modules", "Web Scraping & Automation", "Flask & Django Basics"],
+    color: "from-yellow-500 to-amber-600"
   },
   {
     id: "java-prog",
@@ -112,333 +27,105 @@ const courses = [
     desc: "Master core Java, Object-Oriented Programming, multithreading, databases (JDBC), and building Spring Boot backend applications.",
     rating: 4.7,
     reviews: 420,
-    duration: "4 Months",
-    metaText: "16 Modules",
     image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&h=340&fit=crop",
     features: ["OOP Core Concepts", "Multithreading & Collections", "JDBC & Database Connectivity", "Spring Boot Framework"],
     color: "from-blue-600 to-cyan-500"
   },
   {
-    id: "python-specialization",
-    title: "Python Programming Specialization",
+    id: "web-dev",
+    title: "Full Stack Web Development",
     type: "course",
     category: "CSE",
-    desc: "Go from basics to advanced Python scripts, automation, data structures, and building web scrapers and scripts.",
-    rating: 4.8,
-    reviews: 890,
-    duration: "3 Months",
-    metaText: "12 Modules",
-    image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=600&h=340&fit=crop",
-    features: ["Syntax & Basic Structures", "File Handling & Modules", "Web Scraping & Automation", "Flask & Django Basics"],
-    color: "from-yellow-500 to-amber-600"
-  },
-  {
-    id: "vlsi-design",
-    title: "VLSI Design & Verilog",
-    type: "course",
-    category: "ECE & EEE",
-    desc: "Master VLSI design methodologies, digital design principles, CMOS circuits, and Verilog HDL modeling.",
+    desc: "Master the MERN stack (MongoDB, Express, React, Node.js) with real-world projects and learn to deploy scalable, modern web applications.",
     rating: 4.9,
-    reviews: 310,
-    duration: "6 Months",
-    metaText: "24 Modules",
-    image: "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?w=600&h=340&fit=crop",
-    features: ["Verilog HDL Programming", "CMOS Circuits & Layout", "FPGA Architecture & Prototyping", "ASIC Design Workflows"],
-    color: "from-cyan-500 to-blue-600"
-  },
-  {
-    id: "iot-systems",
-    title: "Internet of Things (IoT) Systems",
-    type: "course",
-    category: "ECE & EEE",
-    desc: "Build smart interconnected systems using Arduino, Raspberry Pi, various sensor modules, and IoT cloud platforms.",
-    rating: 4.8,
-    reviews: 430,
-    duration: "5 Months",
-    metaText: "20 Modules",
-    image: "https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?w=600&h=340&fit=crop",
-    features: ["Hardware Interfaces", "MQTT & HTTP Protocols", "Sensors & Actuators Integration", "IoT Cloud Platforms"],
-    color: "from-teal-500 to-cyan-600"
-  },
-  {
-    id: "robotics-eng",
-    title: "Robotics Engineering & Control",
-    type: "course",
-    category: "ECE & EEE",
-    desc: "Understand robot kinematics, dynamics, sensor fusion, actuator controls, and programming using ROS.",
-    rating: 4.8,
-    reviews: 290,
-    duration: "6 Months",
-    metaText: "22 Modules",
-    image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=600&h=340&fit=crop",
-    features: ["ROS (Robot Operating System)", "Kinematics & Control Systems", "Actuator & Motor Control", "Sensor Fusion Algorithms"],
-    color: "from-indigo-500 to-purple-600"
-  },
-  {
-    id: "embedded-system",
-    title: "Embedded Systems Programming",
-    type: "course",
-    category: "ECE & EEE",
-    desc: "Program microcontrollers using Embedded C, configure GPIOs, timers, interrupts, and serial communication protocols (I2C, SPI).",
-    rating: 4.9,
-    reviews: 520,
-    duration: "5 Months",
-    metaText: "20 Modules",
-    image: "https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?w=600&h=340&fit=crop",
-    features: ["Microcontroller Architecture", "Embedded C Programming", "GPIO, Timers & Interrupts", "I2C, SPI & UART Protocols"],
+    reviews: 1240,
+    image: "https://images.unsplash.com/photo-1627398242454-45a1465c2479?w=600&h=340&fit=crop",
+    features: ["MERN Stack", "Next.js & Tailwind CSS", "REST APIs & Databases", "CI/CD & Cloud Deployment"],
     color: "from-blue-500 to-indigo-600"
   },
   {
-    id: "autocad-mech",
-    title: "AutoCAD for Mechanical",
+    id: "ai-ml",
+    title: "Artificial Intelligence",
     type: "course",
-    category: "Mechanical & Automobiles",
-    desc: "Master 2D drafting and 3D modeling of mechanical components, assembly drawings, and blueprint interpretation.",
-    rating: 4.8,
-    reviews: 610,
-    duration: "3 Months",
-    metaText: "15 Modules",
-    image: "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=600&h=340&fit=crop",
-    features: ["2D Orthographic Drafting", "3D Solid & Surface Modeling", "Assembly Design Sheets", "Mechanical Standards & Tolerances"],
-    color: "from-orange-500 to-red-600"
+    category: "CSE",
+    desc: "Explore neural networks, computer vision, natural language processing, transformers, and generative AI systems.",
+    rating: 4.9,
+    reviews: 980,
+    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600&h=340&fit=crop",
+    features: ["Deep Neural Networks", "Natural Language Processing", "Computer Vision", "Transformers & LLMs"],
+    color: "from-purple-500 to-pink-600"
   },
   {
-    id: "hev-tech",
-    title: "HEV Technology",
+    id: "ml-bootcamp",
+    title: "Machine Learning",
     type: "course",
-    category: "Mechanical & Automobiles",
-    desc: "Explore battery management systems, electric drivetrains, regenerative braking, and powertrain architecture.",
-    rating: 4.9,
-    reviews: 380,
-    duration: "5 Months",
-    metaText: "18 Modules",
-    image: "https://images.unsplash.com/photo-1563720223185-11003d516935?w=600&h=340&fit=crop",
-    features: ["Battery Management Systems", "Electric Motors & Inverters", "HEV Architecture", "Regenerative Braking Systems"],
+    category: "CSE",
+    desc: "Learn Python, data prep, regression, classification, clustering, ensemble methods, and deploying ML pipelines.",
+    rating: 4.8,
+    reviews: 720,
+    image: "https://images.unsplash.com/photo-1527474305487-b87b222841cc?w=600&h=340&fit=crop",
+    features: ["Supervised Learning", "Regression & Classification", "Scikit-Learn & Pandas", "Model Deployment"],
+    color: "from-purple-500 to-indigo-600"
+  },
+  {
+    id: "data-science",
+    title: "Data Science",
+    type: "course",
+    category: "CSE",
+    desc: "Master SQL, Pandas, NumPy, data cleaning, exploratory data analysis, and creating business dashboards in Tableau.",
+    rating: 4.7,
+    reviews: 840,
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=340&fit=crop",
+    features: ["Data Cleaning & EDA", "Statistical Inference", "SQL & Database Queries", "Tableau & PowerBI Reports"],
     color: "from-emerald-500 to-teal-600"
   },
   {
-    id: "ic-engine",
-    title: "IC Engine Design",
+    id: "data-analytics",
+    title: "Data Analytics",
     type: "course",
-    category: "Mechanical & Automobiles",
-    desc: "Study thermodynamics, fuel injection systems, combustion dynamics, and emission control systems of modern IC engines.",
-    rating: 4.7,
-    reviews: 240,
-    duration: "4 Months",
-    metaText: "16 Modules",
-    image: "https://images.unsplash.com/photo-1486006920555-c77dce18193b?w=600&h=340&fit=crop",
-    features: ["Thermodynamic Cycles", "Fuel Injection & Induction", "Combustion Dynamics & CFD", "Emission Testing & Controls"],
-    color: "from-amber-500 to-orange-600"
-  },
-  {
-    id: "car-designing",
-    title: "Car Designing & Aerodynamics",
-    type: "course",
-    category: "Mechanical & Automobiles",
-    desc: "Learn automotive exterior design, surface modeling in CATIA/SolidWorks, and wind tunnel simulation (CFD).",
-    rating: 4.9,
-    reviews: 470,
-    duration: "6 Months",
-    metaText: "24 Modules",
-    image: "https://images.unsplash.com/photo-1511919884226-fd3cad34687c?w=600&h=340&fit=crop",
-    features: ["Class-A Surface Modeling", "Chassis & Frame Design", "CFD Aerodynamic Simulations", "CATIA / SolidWorks Assembly"],
-    color: "from-rose-500 to-red-600"
-  },
-  {
-    id: "stad-pro",
-    title: "STAAD.Pro Frame Analysis",
-    type: "course",
-    category: "Mechanical & Automobiles",
-    desc: "Learn structural loading, mechanical structural frame simulations, stress distribution, and support reactions.",
+    category: "CSE",
+    desc: "Analyze complex business datasets using SQL databases, Excel spreadsheets, PowerBI interactive reports, and statistical analytics.",
     rating: 4.8,
-    reviews: 320,
-    duration: "4 Months",
-    metaText: "16 Modules",
-    image: "https://images.unsplash.com/photo-1581094288338-2314dddb7ecc?w=600&h=340&fit=crop",
-    features: ["Structural Finite Element Analysis", "Loading Calculations", "Stress & Shear Diagrams", "Frame Support Reactions"],
-    color: "from-blue-600 to-indigo-600"
+    reviews: 490,
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=340&fit=crop",
+    features: ["Data Cleaning & Prepping", "Excel Advanced Analytics", "PowerBI & Dashboards", "Statistical Modeling"],
+    color: "from-teal-500 to-emerald-600"
   },
   {
-    id: "digital-marketing",
-    title: "Digital Marketing Masterclass",
+    id: "cyber-security",
+    title: "Cyber Security",
     type: "course",
-    category: "Management",
-    desc: "Master SEO, search engine marketing, social media ads, email automation, analytics, and content marketing strategies.",
-    rating: 4.9,
-    reviews: 1150,
-    duration: "3 Months",
-    metaText: "15 Modules",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=340&fit=crop",
-    features: ["Search Engine Optimization", "Meta & Google Ads Manager", "Email Marketing Automation", "Web Analytics & Reporting"],
-    color: "from-sky-500 to-blue-600"
-  },
-  {
-    id: "marketing-management",
-    title: "Marketing Management & Strategy",
-    type: "course",
-    category: "Management",
-    desc: "Explore consumer behavior, product positioning, marketing research, brand management, and pricing strategies.",
+    category: "CSE",
+    desc: "Learn system penetration testing, network defense, threat assessment, cryptography, and safety audits.",
     rating: 4.8,
-    reviews: 640,
-    duration: "4 Months",
-    metaText: "18 Modules",
-    image: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=600&h=340&fit=crop",
-    features: ["Market Research Methods", "Brand Building & Equity", "Product Lifecycle Strategy", "Competitive Pricing Models"],
+    reviews: 650,
+    image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=600&h=340&fit=crop",
+    features: ["Ethical Hacking", "Network Vulnerability", "Penetration Testing", "Security Audits & Compliance"],
+    color: "from-red-500 to-rose-600"
+  },
+  {
+    id: "app-development",
+    title: "App Development",
+    type: "course",
+    category: "CSE",
+    desc: "Create high-performance cross-platform iOS and Android apps using React Native, Flutter, and cloud backends.",
+    rating: 4.8,
+    reviews: 580,
+    image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=600&h=340&fit=crop",
+    features: ["React Native & Flutter", "iOS & Android Builds", "State Management", "App Store Publishing"],
     color: "from-violet-500 to-fuchsia-600"
   },
   {
-    id: "finance-accounting",
-    title: "Corporate Finance & Accounting",
-    type: "course",
-    category: "Management",
-    desc: "Analyze financial statements, capital budgeting, corporate evaluation, cost auditing, and financial risk management.",
-    rating: 4.9,
-    reviews: 820,
-    duration: "4 Months",
-    metaText: "18 Modules",
-    image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&h=340&fit=crop",
-    features: ["Balance Sheet Analysis", "Capital Budgeting Models", "Corporate Valuation", "Financial Risk Assessment"],
-    color: "from-emerald-500 to-green-600"
-  },
-  {
-    id: "business-analytics",
-    title: "Business Analytics & BI",
-    type: "course",
-    category: "Management",
-    desc: "Convert data to actionable decisions using Excel formulas, SQL databases, PowerBI reports, and predictive analysis.",
-    rating: 4.8,
-    reviews: 910,
-    duration: "5 Months",
-    metaText: "20 Modules",
-    image: "https://images.unsplash.com/photo-1551836022-b06985bcdb25?w=600&h=340&fit=crop",
-    features: ["SQL & Data Querying", "Excel Model Analytics", "PowerBI & Dashboards", "Predictive Analytics Models"],
-    color: "from-pink-500 to-rose-600"
-  },
-  {
-    id: "stock-marketing",
-    title: "Stock Market Trading & Analysis",
-    type: "course",
-    category: "Management",
-    desc: "Learn candlestick patterns, charts, technical indicators, portfolio construction, options, and derivatives risk management.",
-    rating: 4.8,
-    reviews: 1350,
-    duration: "3 Months",
-    metaText: "14 Modules",
-    image: "https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?w=600&h=340&fit=crop",
-    features: ["Technical Indicator Systems", "Candlestick Pattern Trading", "Portfolio Asset Allocation", "Options Trading Strategies"],
-    color: "from-teal-500 to-cyan-600"
-  },
-  {
-    id: "hr-management",
-    title: "HR Management & Operations",
-    type: "course",
-    category: "Management",
-    desc: "Master talent acquisition, employee engagement programs, labor law regulations, payroll operations, and conflict resolution.",
-    rating: 4.7,
-    reviews: 410,
-    duration: "3 Months",
-    metaText: "12 Modules",
-    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&h=340&fit=crop",
-    features: ["Talent Acquisition & Hiring", "Performance Management Systems", "Labor Compliance & Laws", "Payroll Processing Methods"],
-    color: "from-orange-500 to-amber-600"
-  },
-  {
-    id: "bioinformatics",
-    title: "Bioinformatics & Genomic Data",
-    type: "course",
-    category: "Biotechnology",
-    desc: "Analyze biological sequence data (DNA, RNA, proteins), structure models, sequence alignment, and NCBI resources.",
-    rating: 4.8,
-    reviews: 210,
-    duration: "4 Months",
-    metaText: "16 Modules",
-    image: "https://images.unsplash.com/photo-1532187643603-ba119ca4109e?w=600&h=340&fit=crop",
-    features: ["Sequence Alignment Methods", "Genomic Database Tools", "Phylogenetic Tree Modeling", "Protein Structure Prediction"],
-    color: "from-blue-500 to-cyan-500"
-  },
-  {
-    id: "nano-science",
-    title: "Introduction to Nano-Science",
-    type: "course",
-    category: "Biotechnology",
-    desc: "Study nanomaterials at the atomic scale, synthesis, characterization tools (SEM, TEM), and chemical/physical properties.",
-    rating: 4.8,
-    reviews: 180,
-    duration: "3 Months",
-    metaText: "12 Modules",
-    image: "https://images.unsplash.com/photo-1614850523459-c2f4c699c52e?w=600&h=340&fit=crop",
-    features: ["Nanomaterial Synthesis", "SEM & TEM Microscopy", "Quantum Scale Properties", "Characterization Techniques"],
-    color: "from-indigo-500 to-teal-500"
-  },
-  {
-    id: "nanotechnology",
-    title: "Nanotechnology Applications",
-    type: "course",
-    category: "Biotechnology",
-    desc: "Explore carbon nanotubes, medical drug delivery systems, sensors, and electronic devices utilizing nanotechnology.",
-    rating: 4.9,
-    reviews: 320,
-    duration: "5 Months",
-    metaText: "18 Modules",
-    image: "https://images.unsplash.com/photo-1507668077129-56e32842fceb?w=600&h=340&fit=crop",
-    features: ["Drug Delivery Systems", "Carbon Nanotubes & Graphene", "Nanosensor Device Design", "Nanoelectronics Fabrication"],
-    color: "from-cyan-500 to-blue-600"
-  },
-  {
-    id: "genetic-engineering",
-    title: "Genetic Engineering & CRISPR",
-    type: "course",
-    category: "Biotechnology",
-    desc: "Master DNA cloning, recombinant DNA methods, PCR testing, CRISPR-Cas9 genome editing, and biosafety guidelines.",
-    rating: 4.9,
-    reviews: 440,
-    duration: "6 Months",
-    metaText: "24 Modules",
-    image: "https://images.unsplash.com/photo-1576086213369-97a306d36557?w=600&h=340&fit=crop",
-    features: ["Recombinant DNA Technology", "CRISPR-Cas9 Editing", "PCR & Gel Electrophoresis", "Gene Cloning Protocols"],
-    color: "from-emerald-500 to-teal-600"
-  },
-  {
-    id: "autocad-civil",
-    title: "AutoCAD for Civil & Architecture",
-    type: "course",
-    category: "Civil",
-    desc: "Create 2D floor plans, building elevation sheets, structural framing drawings, and architectural layouts.",
-    rating: 4.8,
-    reviews: 530,
-    duration: "3 Months",
-    metaText: "15 Modules",
-    image: "https://images.unsplash.com/photo-1503387762-592dedb80256?w=600&h=340&fit=crop",
-    features: ["2D Building Floor Plans", "3D Elevation Renderings", "Structural Column Layouts", "Civil Standard Drawing Codes"],
-    color: "from-orange-500 to-amber-600"
-  },
-  {
-    id: "construction-planning",
-    title: "Construction Project Planning",
-    type: "course",
-    category: "Civil",
-    desc: "Learn project estimating, scheduling, resource management using Primavera/MS Project, and site quality control standards.",
-    rating: 4.9,
-    reviews: 620,
-    duration: "4 Months",
-    metaText: "16 Modules",
-    image: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=600&h=340&fit=crop",
-    features: ["Project Estimation Sheets", "CPM/PERT Scheduling Method", "Primavera P6 / MS Project", "Site Quality & Safety Audits"],
-    color: "from-teal-500 to-green-600"
-  },
-  {
-    id: "ar-vr",
-    title: "AR & VR Development",
+    id: "aws-cloud",
+    title: "Amazon Web Services (AWS)",
     type: "course",
     category: "CSE",
-    desc: "Build immersive virtual and augmented reality experiences using Unity, Unreal Engine, C# scripting, and 3D assets.",
-    rating: 4.8,
-    reviews: 290,
-    duration: "4 Months",
-    metaText: "16 Modules",
-    image: "https://images.unsplash.com/photo-1614850523459-c2f4c699c52e?w=600&h=340&fit=crop",
-    features: ["Unity & C# Scripting", "3D Modeling & Assets", "Oculus & WebXR SDKs", "Interactive VR Projects"],
-    color: "from-fuchsia-500 to-purple-600"
+    desc: "Prepare for AWS Certification. Learn cloud infrastructure design, virtual networks, scaling, and database setups.",
+    rating: 4.9,
+    reviews: 1560,
+    image: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=600&h=340&fit=crop",
+    features: ["EC2, S3 & VPC Setup", "Cloud Security & IAM", "Serverless with Lambda", "DevOps & CloudFormation"],
+    color: "from-orange-500 to-amber-600"
   },
   {
     id: "cloud-computing",
@@ -448,53 +135,319 @@ const courses = [
     desc: "Master cloud environments across AWS, Azure, and Google Cloud, covering virtualization, architecture, and network configuration.",
     rating: 4.9,
     reviews: 680,
-    duration: "4 Months",
-    metaText: "18 Modules",
     image: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=600&h=340&fit=crop",
     features: ["Multi-Cloud Setup", "Virtualization & Networks", "Cloud Storage & Databases", "Security & Compliance"],
     color: "from-blue-500 to-sky-600"
   },
   {
-    id: "data-analytics",
-    title: "Data Analytics Specialization",
+    id: "ar-vr",
+    title: "Augmented Reality & Virtual Reality (AR & VR)",
     type: "course",
     category: "CSE",
-    desc: "Analyze complex business datasets using SQL databases, Excel spreadsheets, PowerBI interactive reports, and statistical analytics.",
+    desc: "Build immersive virtual and augmented reality experiences using Unity, Unreal Engine, C# scripting, and 3D assets.",
     rating: 4.8,
-    reviews: 490,
-    duration: "4 Months",
-    metaText: "16 Modules",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=340&fit=crop",
-    features: ["Data Cleaning & Prepping", "Excel Advanced Analytics", "PowerBI & Dashboards", "Statistical Modeling"],
-    color: "from-teal-500 to-emerald-600"
+    reviews: 290,
+    image: "https://images.unsplash.com/photo-1614850523459-c2f4c699c52e?w=600&h=340&fit=crop",
+    features: ["Unity & C# Scripting", "3D Modeling & Assets", "Oculus & WebXR SDKs", "Interactive VR Projects"],
+    color: "from-fuchsia-500 to-purple-600"
   },
   {
     id: "dsa",
-    title: "Data Structures & Algorithms (DSA)",
+    title: "Data Structures & Algorithms",
     type: "course",
     category: "CSE",
     desc: "Ace technical coding interviews. Master arrays, lists, trees, graphs, sorting, searching, and dynamic programming in C++/Java.",
     rating: 4.9,
     reviews: 1140,
-    duration: "5 Months",
-    metaText: "20 Modules",
     image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=600&h=340&fit=crop",
     features: ["Complex Data Structures", "Sorting & Searching Algos", "Dynamic Programming", "Mock Interview Practice"],
     color: "from-indigo-600 to-violet-500"
   },
   {
     id: "devops",
-    title: "DevOps & CI/CD Pipeline",
+    title: "DevOps",
     type: "course",
     category: "CSE",
     desc: "Automate system deployments. Master Docker containerization, Kubernetes orchestration, Jenkins pipelines, and IaC using Terraform.",
     rating: 4.8,
     reviews: 750,
-    duration: "4 Months",
-    metaText: "18 Modules",
     image: "https://images.unsplash.com/photo-1486006920555-c77dce18193b?w=600&h=340&fit=crop",
     features: ["Docker & Kubernetes", "Jenkins CI/CD Pipelines", "Terraform Infrastructure", "Monitoring & Logging Tools"],
     color: "from-orange-500 to-red-600"
+  },
+  {
+    id: "gen-ai",
+    title: "Gen AI",
+    type: "course",
+    category: "CSE",
+    desc: "Master Generative AI pipelines, LangChain orchestration, RAG architectures, model fine-tuning, and building complex AI Agents.",
+    rating: 4.9,
+    reviews: 310,
+    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600&h=340&fit=crop",
+    features: ["Prompt Engineering", "LangChain & RAG Stack", "Fine-Tuning LLMs", "Autonomous AI Agents"],
+    color: "from-pink-500 to-rose-600"
+  },
+
+  // 2. ECE & EEE
+  {
+    id: "vlsi-design",
+    title: "VLSI",
+    type: "course",
+    category: "ECE & EEE",
+    desc: "Master VLSI design methodologies, digital design principles, CMOS circuits, and Verilog HDL modeling.",
+    rating: 4.9,
+    reviews: 310,
+    image: "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?w=600&h=340&fit=crop",
+    features: ["Verilog HDL Programming", "CMOS Circuits & Layout", "FPGA Architecture & Prototyping", "ASIC Design Workflows"],
+    color: "from-cyan-500 to-blue-600"
+  },
+  {
+    id: "iot-systems",
+    title: "Internet of Things (IoT)",
+    type: "course",
+    category: "ECE & EEE",
+    desc: "Build smart interconnected systems using Arduino, Raspberry Pi, various sensor modules, and IoT cloud platforms.",
+    rating: 4.8,
+    reviews: 430,
+    image: "https://images.unsplash.com/photo-1558346490-a72e53ae2d4f?w=600&h=340&fit=crop",
+    features: ["Hardware Interfaces", "MQTT & HTTP Protocols", "Sensors & Actuators Integration", "IoT Cloud Platforms"],
+    color: "from-teal-500 to-cyan-600"
+  },
+  {
+    id: "robotics-eng",
+    title: "Robotics",
+    type: "course",
+    category: "ECE & EEE",
+    desc: "Understand robot kinematics, dynamics, sensor fusion, actuator controls, and programming using ROS.",
+    rating: 4.8,
+    reviews: 290,
+    image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=600&h=340&fit=crop",
+    features: ["ROS (Robot Operating System)", "Kinematics & Control Systems", "Actuator & Motor Control", "Sensor Fusion Algorithms"],
+    color: "from-indigo-500 to-purple-600"
+  },
+  {
+    id: "embedded-system",
+    title: "Embedded Systems",
+    type: "course",
+    category: "ECE & EEE",
+    desc: "Program microcontrollers using Embedded C, configure GPIOs, timers, interrupts, and serial communication protocols (I2C, SPI).",
+    rating: 4.9,
+    reviews: 520,
+    image: "https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?w=600&h=340&fit=crop",
+    features: ["Microcontroller Architecture", "Embedded C Programming", "GPIO, Timers & Interrupts", "I2C, SPI & UART Protocols"],
+    color: "from-blue-500 to-indigo-600"
+  },
+
+  // 3. MECHANICAL & AUTOMOBILES
+  {
+    id: "autocad-mech",
+    title: "Auto CAD",
+    type: "course",
+    category: "Mechanical & Automobiles",
+    desc: "Master 2D drafting and 3D modeling of mechanical components, assembly drawings, and blueprint interpretation.",
+    rating: 4.8,
+    reviews: 610,
+    image: "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=600&h=340&fit=crop",
+    features: ["2D Orthographic Drafting", "3D Solid & Surface Modeling", "Assembly Design Sheets", "Mechanical Standards & Tolerances"],
+    color: "from-orange-500 to-red-600"
+  },
+  {
+    id: "hev-tech",
+    title: "Hybrid Electric Vehicle",
+    type: "course",
+    category: "Mechanical & Automobiles",
+    desc: "Explore battery management systems, electric drivetrains, regenerative braking, and powertrain architecture.",
+    rating: 4.9,
+    reviews: 380,
+    image: "https://images.unsplash.com/photo-1563720223185-11003d516935?w=600&h=340&fit=crop",
+    features: ["Battery Management Systems", "Electric Motors & Inverters", "HEV Architecture", "Regenerative Braking Systems"],
+    color: "from-emerald-500 to-teal-600"
+  },
+  {
+    id: "ic-engine",
+    title: "IC Engine",
+    type: "course",
+    category: "Mechanical & Automobiles",
+    desc: "Study thermodynamics, fuel injection systems, combustion dynamics, and emission control systems of modern IC engines.",
+    rating: 4.7,
+    reviews: 240,
+    image: "https://images.unsplash.com/photo-1486006920555-c77dce18193b?w=600&h=340&fit=crop",
+    features: ["Thermodynamic Cycles", "Fuel Injection & Induction", "Combustion Dynamics & CFD", "Emission Testing & Controls"],
+    color: "from-amber-500 to-orange-600"
+  },
+  {
+    id: "car-designing",
+    title: "Car Designing",
+    type: "course",
+    category: "Mechanical & Automobiles",
+    desc: "Learn automotive exterior design, surface modeling in CATIA/SolidWorks, and wind tunnel simulation (CFD).",
+    rating: 4.9,
+    reviews: 470,
+    image: "https://images.unsplash.com/photo-1511919884226-fd3cad34687c?w=600&h=340&fit=crop",
+    features: ["Class-A Surface Modeling", "Chassis & Frame Design", "CFD Aerodynamic Simulations", "CATIA / SolidWorks Assembly"],
+    color: "from-rose-500 to-red-600"
+  },
+  {
+    id: "stad-pro",
+    title: "Stad Pro",
+    type: "course",
+    category: "Mechanical & Automobiles",
+    desc: "Learn structural loading, mechanical structural frame simulations, stress distribution, and support reactions.",
+    rating: 4.8,
+    reviews: 320,
+    image: "https://images.unsplash.com/photo-1581094288338-2314dddb7ecc?w=600&h=340&fit=crop",
+    features: ["Structural Finite Element Analysis", "Loading Calculations", "Stress & Shear Diagrams", "Frame Support Reactions"],
+    color: "from-blue-600 to-indigo-600"
+  },
+
+  // 4. CIVIL
+  {
+    id: "autocad-civil",
+    title: "Auto CAD",
+    type: "course",
+    category: "Civil",
+    desc: "Create 2D floor plans, building elevation sheets, structural framing drawings, and architectural layouts.",
+    rating: 4.8,
+    reviews: 530,
+    image: "https://images.unsplash.com/photo-1503387762-592dedb80256?w=600&h=340&fit=crop",
+    features: ["2D Building Floor Plans", "3D Elevation Renderings", "Structural Column Layouts", "Civil Standard Drawing Codes"],
+    color: "from-orange-500 to-amber-600"
+  },
+  {
+    id: "construction-planning",
+    title: "Construction Planning",
+    type: "course",
+    category: "Civil",
+    desc: "Learn project estimating, scheduling, resource management using Primavera/MS Project, and site quality control standards.",
+    rating: 4.9,
+    reviews: 620,
+    image: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=600&h=340&fit=crop",
+    features: ["Project Estimation Sheets", "CPM/PERT Scheduling Method", "Primavera P6 / MS Project", "Site Quality & Safety Audits"],
+    color: "from-teal-500 to-green-600"
+  },
+
+  // 5. MANAGEMENT
+  {
+    id: "digital-marketing",
+    title: "Digital Marketing",
+    type: "course",
+    category: "Management",
+    desc: "Master SEO, search engine marketing, social media ads, email automation, analytics, and content marketing strategies.",
+    rating: 4.9,
+    reviews: 1150,
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=340&fit=crop",
+    features: ["Search Engine Optimization", "Meta & Google Ads Manager", "Email Marketing Automation", "Web Analytics & Reporting"],
+    color: "from-sky-500 to-blue-600"
+  },
+  {
+    id: "marketing-management",
+    title: "Marketing Management",
+    type: "course",
+    category: "Management",
+    desc: "Explore consumer behavior, product positioning, marketing research, brand management, and pricing strategies.",
+    rating: 4.8,
+    reviews: 640,
+    image: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=600&h=340&fit=crop",
+    features: ["Market Research Methods", "Brand Building & Equity", "Product Lifecycle Strategy", "Competitive Pricing Models"],
+    color: "from-violet-500 to-fuchsia-600"
+  },
+  {
+    id: "finance-accounting",
+    title: "Finance",
+    type: "course",
+    category: "Management",
+    desc: "Analyze financial statements, capital budgeting, corporate evaluation, cost auditing, and financial risk management.",
+    rating: 4.9,
+    reviews: 820,
+    image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&h=340&fit=crop",
+    features: ["Balance Sheet Analysis", "Capital Budgeting Models", "Corporate Valuation", "Financial Risk Assessment"],
+    color: "from-emerald-500 to-green-600"
+  },
+  {
+    id: "business-analytics",
+    title: "Business Analytics",
+    type: "course",
+    category: "Management",
+    desc: "Convert data to actionable decisions using Excel formulas, SQL databases, PowerBI reports, and predictive analysis.",
+    rating: 4.8,
+    reviews: 910,
+    image: "https://images.unsplash.com/photo-1551836022-b06985bcdb25?w=600&h=340&fit=crop",
+    features: ["SQL & Data Querying", "Excel Model Analytics", "PowerBI & Dashboards", "Predictive Analytics Models"],
+    color: "from-pink-500 to-rose-600"
+  },
+  {
+    id: "stock-marketing",
+    title: "Stock Marketing",
+    type: "course",
+    category: "Management",
+    desc: "Learn candlestick patterns, charts, technical indicators, portfolio construction, options, and derivatives risk management.",
+    rating: 4.8,
+    reviews: 1350,
+    image: "https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?w=600&h=340&fit=crop",
+    features: ["Technical Indicator Systems", "Candlestick Pattern Trading", "Portfolio Asset Allocation", "Options Trading Strategies"],
+    color: "from-teal-500 to-cyan-600"
+  },
+  {
+    id: "hr-management",
+    title: "HR",
+    type: "course",
+    category: "Management",
+    desc: "Master talent acquisition, employee engagement programs, labor law regulations, payroll operations, and conflict resolution.",
+    rating: 4.7,
+    reviews: 410,
+    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&h=340&fit=crop",
+    features: ["Talent Acquisition & Hiring", "Performance Management Systems", "Labor Compliance & Laws", "Payroll Processing Methods"],
+    color: "from-orange-500 to-amber-600"
+  },
+
+  // 6. BIOTECHNOLOGY
+  {
+    id: "bioinformatics",
+    title: "Bio Informatics",
+    type: "course",
+    category: "Biotechnology",
+    desc: "Analyze biological sequence data (DNA, RNA, proteins), structure models, sequence alignment, and NCBI resources.",
+    rating: 4.8,
+    reviews: 210,
+    image: "https://images.unsplash.com/photo-1532187643603-ba119ca4109e?w=600&h=340&fit=crop",
+    features: ["Sequence Alignment Methods", "Genomic Database Tools", "Phylogenetic Tree Modeling", "Protein Structure Prediction"],
+    color: "from-blue-500 to-cyan-500"
+  },
+  {
+    id: "nano-science",
+    title: "Nano Science",
+    type: "course",
+    category: "Biotechnology",
+    desc: "Study nanomaterials at the atomic scale, synthesis, characterization tools (SEM, TEM), and chemical/physical properties.",
+    rating: 4.8,
+    reviews: 180,
+    image: "https://images.unsplash.com/photo-1614850523459-c2f4c699c52e?w=600&h=340&fit=crop",
+    features: ["Nanomaterial Synthesis", "SEM & TEM Microscopy", "Quantum Scale Properties", "Characterization Techniques"],
+    color: "from-indigo-500 to-teal-500"
+  },
+  {
+    id: "nanotechnology",
+    title: "Nano Technology",
+    type: "course",
+    category: "Biotechnology",
+    desc: "Explore carbon nanotubes, medical drug delivery systems, sensors, and electronic devices utilizing nanotechnology.",
+    rating: 4.9,
+    reviews: 320,
+    image: "https://images.unsplash.com/photo-1507668077129-56e32842fceb?w=600&h=340&fit=crop",
+    features: ["Drug Delivery Systems", "Carbon Nanotubes & Graphene", "Nanosensor Device Design", "Nanoelectronics Fabrication"],
+    color: "from-cyan-500 to-blue-600"
+  },
+  {
+    id: "genetic-engineering",
+    title: "Genetic Engineering",
+    type: "course",
+    category: "Biotechnology",
+    desc: "Master DNA cloning, recombinant DNA methods, PCR testing, CRISPR-Cas9 genome editing, and biosafety guidelines.",
+    rating: 4.9,
+    reviews: 440,
+    image: "https://images.unsplash.com/photo-1576086213369-97a306d36557?w=600&h=340&fit=crop",
+    features: ["Recombinant DNA Technology", "CRISPR-Cas9 Editing", "PCR & Gel Electrophoresis", "Gene Cloning Protocols"],
+    color: "from-emerald-500 to-teal-600"
   }
 ];
 
@@ -508,8 +461,6 @@ const services = [
     desc: "Custom responsive website design and development tailored to showcase your business or personal portfolio with premium animations.",
     rating: 4.9,
     reviews: 120,
-    duration: "1-2 Weeks",
-    metaText: "SEO Friendly",
     image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=340&fit=crop",
     features: ["Responsive Design", "Premium Animations", "SEO Optimized Code", "Speed Optimization"],
     color: "from-sky-500 to-blue-600"
@@ -522,8 +473,6 @@ const services = [
     desc: "Cross-platform mobile application development for iOS and Android built with modern frameworks and highly responsive user interfaces.",
     rating: 4.8,
     reviews: 85,
-    duration: "3-4 Weeks",
-    metaText: "iOS & Android",
     image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=600&h=340&fit=crop",
     features: ["React Native / Flutter", "App Store Publishing", "Push Notifications", "Cloud Integrations"],
     color: "from-violet-500 to-fuchsia-600"
@@ -536,8 +485,6 @@ const services = [
     desc: "Craft an ATS-compliant resume and optimize your LinkedIn profile to get noticed by top tech recruiters and secure interview calls.",
     rating: 4.9,
     reviews: 340,
-    duration: "2-3 Days",
-    metaText: "Resume & LI",
     image: "https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=600&h=340&fit=crop",
     features: ["ATS Scanner Testing", "LinkedIn Profile Audit", "Keywords Optimization", "Cover Letter Template"],
     color: "from-emerald-500 to-green-600"
@@ -550,8 +497,6 @@ const services = [
     desc: "1-on-1 career path guidance, mock interviews, and job placement assistance with our hiring partners to launch your dream role.",
     rating: 4.9,
     reviews: 510,
-    duration: "1 Month",
-    metaText: "1-on-1 Sessions",
     image: "https://images.unsplash.com/photo-1521791136064-7986c2920216?w=600&h=340&fit=crop",
     features: ["Mock Coding Interviews", "Salary Negotiation", "Direct HR Referrals", "Portfolio Review"],
     color: "from-pink-500 to-rose-600"
@@ -559,6 +504,76 @@ const services = [
 ];
 
 const allItems = [...courses, ...services];
+
+// Card Sub-component
+function CourseCard({ item, getWhatsAppLink }: { item: typeof allItems[0]; getWhatsAppLink: (item: any) => string }) {
+  return (
+    <motion.div
+      layout
+      initial={{ opacity: 0, scale: 0.95 }}
+      animate={{ opacity: 1, scale: 1 }}
+      exit={{ opacity: 0, scale: 0.95 }}
+      transition={{ duration: 0.3 }}
+      className="bg-white border border-gray-100 rounded-2xl overflow-hidden shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col group h-full"
+    >
+      {/* Card Image */}
+      <div className="w-full aspect-[16/9] relative overflow-hidden bg-gray-50">
+        <img
+          src={item.image}
+          alt={item.title}
+          loading="lazy"
+          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+        />
+        {/* Badge for Course / Service Type */}
+        <div className="absolute top-2 left-2 bg-white/95 backdrop-blur-sm px-2 py-1 rounded-full text-[9px] font-bold uppercase tracking-wider text-text-primary flex items-center gap-1 shadow-sm">
+          <span className={`w-1.5 h-1.5 rounded-full ${item.type === "course" ? "bg-primary" : "bg-emerald-500"}`} />
+          <span>{item.type}</span>
+        </div>
+
+        <div className="absolute bottom-2 right-2 bg-text-primary/80 backdrop-blur-sm text-white px-2 py-0.5 rounded-full text-[10px] font-semibold">
+          {item.category}
+        </div>
+      </div>
+
+      {/* Card Content */}
+      <div className="p-4 flex flex-col flex-grow">
+        <div className="flex items-center gap-1 text-yellow-500 mb-1.5 text-[10px] font-semibold">
+          <Star size={11} className="fill-yellow-500" />
+          <span>{item.rating}</span>
+          <span className="text-gray-400 font-medium">({item.reviews})</span>
+        </div>
+
+        <h3 className="text-xs sm:text-sm font-bold mb-1.5 font-heading group-hover:text-primary transition-colors line-clamp-1">
+          {item.title}
+        </h3>
+        
+        <p className="text-text-secondary text-[11px] leading-relaxed mb-3 flex-grow line-clamp-2">
+          {item.desc}
+        </p>
+
+        {/* Features - compact 2 col */}
+        <ul className="grid grid-cols-2 gap-x-1.5 gap-y-1 text-[10px] text-text-secondary mb-4">
+          {item.features.slice(0, 4).map((feat, idx) => (
+            <li key={idx} className="flex items-center gap-1">
+              <span className="text-primary font-bold text-[10px]">✓</span>
+              <span className="truncate">{feat}</span>
+            </li>
+          ))}
+        </ul>
+
+        {/* WhatsApp CTA Link */}
+        <a
+          href={getWhatsAppLink(item)}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="w-full text-center py-2 text-[11px] sm:text-xs font-semibold rounded-lg border border-primary text-primary bg-white hover:bg-primary hover:text-white transition-all duration-300 relative z-10 block mt-auto"
+        >
+          {item.type === "course" ? "Enroll Now" : "Request Service"}
+        </a>
+      </div>
+    </motion.div>
+  );
+}
 
 export default function CoursesPage() {
   const [activeTab, setActiveTab] = useState<"all" | "courses" | "services">("all");
@@ -610,6 +625,16 @@ export default function CoursesPage() {
 
     return items;
   }, [activeTab, selectedCategory, searchQuery]);
+
+  // Determine if we should group items visually under category sections
+  const shouldGroup = useMemo(() => {
+    return selectedCategory === "All" && searchQuery.trim() === "";
+  }, [selectedCategory, searchQuery]);
+
+  // Categories list to iterate for grouped rendering
+  const categoriesList = useMemo(() => {
+    return categories.filter(c => c !== "All");
+  }, [categories]);
 
   // WhatsApp Link Helper
   const getWhatsAppLink = (item: typeof allItems[0]) => {
@@ -718,82 +743,44 @@ export default function CoursesPage() {
             <p className="text-gray-500 text-sm">Try resetting your filters or search keywords.</p>
           </motion.div>
         ) : (
-          <motion.div 
-            layout
-            className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-5"
-          >
-            <AnimatePresence mode="popLayout">
-              {filteredItems.map((item) => (
-                <motion.div
-                  key={item.id}
-                  layout
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.95 }}
-                  transition={{ duration: 0.3 }}
-                  className="bg-white border border-gray-100 rounded-2xl overflow-hidden shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col group h-full"
-                >
-                  {/* Card Image */}
-                  <div className="w-full aspect-[16/9] relative overflow-hidden bg-gray-50">
-                    <img
-                      src={item.image}
-                      alt={item.title}
-                      loading="lazy"
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
-                    {/* Badge for Course / Service Type */}
-                    <div className="absolute top-2 left-2 bg-white/95 backdrop-blur-sm px-2 py-1 rounded-full text-[9px] font-bold uppercase tracking-wider text-text-primary flex items-center gap-1 shadow-sm">
-                      <span className={`w-1.5 h-1.5 rounded-full ${item.type === "course" ? "bg-primary" : "bg-emerald-500"}`} />
-                      <span>{item.type}</span>
+          /* Render grouped layout or flat layout */
+          shouldGroup ? (
+            <div className="space-y-16">
+              {categoriesList.map((categoryName) => {
+                const categoryItems = filteredItems.filter(item => item.category === categoryName);
+                if (categoryItems.length === 0) return null;
+                return (
+                  <div key={categoryName} className="space-y-6">
+                    {/* Category Title Header */}
+                    <div className="flex items-center gap-3 border-b border-gray-100 pb-3">
+                      <h2 className="text-lg md:text-xl font-bold font-heading text-text-primary uppercase tracking-wide">
+                        {categoryName}
+                      </h2>
+                      <span className="bg-primary/10 text-primary text-[10px] md:text-xs font-bold px-2.5 py-0.5 rounded-full">
+                        {categoryItems.length} {categoryItems.length === 1 ? 'Item' : 'Items'}
+                      </span>
                     </div>
-
-                    <div className="absolute bottom-2 right-2 bg-text-primary/80 backdrop-blur-sm text-white px-2 py-0.5 rounded-full text-[10px] font-semibold">
-                      {item.category}
+                    {/* Category Grid */}
+                    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-5">
+                      <AnimatePresence mode="popLayout">
+                        {categoryItems.map((item) => (
+                          <CourseCard key={item.id} item={item} getWhatsAppLink={getWhatsAppLink} />
+                        ))}
+                      </AnimatePresence>
                     </div>
                   </div>
-
-                  {/* Card Content */}
-                  <div className="p-4 flex flex-col flex-grow">
-                    <div className="flex items-center gap-1 text-yellow-500 mb-1.5 text-[10px] font-semibold">
-                      <Star size={11} className="fill-yellow-500" />
-                      <span>{item.rating}</span>
-                      <span className="text-gray-400 font-medium">({item.reviews})</span>
-                    </div>
-
-                    <h3 className="text-xs sm:text-sm font-bold mb-1.5 font-heading group-hover:text-primary transition-colors line-clamp-1">
-                      {item.title}
-                    </h3>
-                    
-                    <p className="text-text-secondary text-[11px] leading-relaxed mb-3 flex-grow line-clamp-2">
-                      {item.desc}
-                    </p>
-
-                    {/* Features - compact 2 col */}
-                    <ul className="grid grid-cols-2 gap-x-1.5 gap-y-1 text-[10px] text-text-secondary mb-3">
-                      {item.features.slice(0, 4).map((feat, idx) => (
-                        <li key={idx} className="flex items-center gap-1">
-                          <span className="text-primary font-bold text-[10px]">✓</span>
-                          <span className="truncate">{feat}</span>
-                        </li>
-                      ))}
-                    </ul>
-
-
-
-                    {/* WhatsApp CTA Link */}
-                    <a
-                      href={getWhatsAppLink(item)}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="w-full text-center py-2 text-[11px] sm:text-xs font-semibold rounded-lg border border-primary text-primary bg-white hover:bg-primary hover:text-white transition-all duration-300 relative z-10 block"
-                    >
-                      {item.type === "course" ? "Enroll Now" : "Request Service"}
-                    </a>
-                  </div>
-                </motion.div>
-              ))}
-            </AnimatePresence>
-          </motion.div>
+                );
+              })}
+            </div>
+          ) : (
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-5">
+              <AnimatePresence mode="popLayout">
+                {filteredItems.map((item) => (
+                  <CourseCard key={item.id} item={item} getWhatsAppLink={getWhatsAppLink} />
+                ))}
+              </AnimatePresence>
+            </div>
+          )
         )}
       </section>
     </div>
