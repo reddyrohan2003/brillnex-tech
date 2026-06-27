@@ -708,17 +708,7 @@ export default function CoursesPage() {
                       ))}
                     </ul>
 
-                    {/* Card Footer Detail */}
-                    <div className="flex items-center justify-between text-[10px] text-gray-500 mb-3 pt-2 border-t border-gray-50">
-                      <div className="flex items-center gap-1 font-medium">
-                        <Clock size={11} className="text-gray-400" />
-                        <span>{item.duration}</span>
-                      </div>
-                      <div className="flex items-center gap-1 font-medium">
-                        <BookOpen size={11} className="text-gray-400" />
-                        <span>{item.metaText}</span>
-                      </div>
-                    </div>
+
 
                     {/* WhatsApp CTA Link */}
                     <a
