@@ -67,12 +67,20 @@ export default function Header() {
         {/* Desktop Navigation is handled by the floating NavBar */}
 
         {/* Desktop CTAs */}
-        <div className="hidden lg:flex items-center gap-5">
+        <div className="hidden lg:flex items-center gap-4">
+          <a
+            href="https://chat.whatsapp.com/CJkfezhYm245urYCdmRLL8"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-[#25D366] hover:bg-[#20ba5a] text-white font-heading font-semibold transition-colors text-xs px-4 py-2.5 rounded-md flex items-center gap-1.5"
+          >
+            Join Community
+          </a>
           <a
             href={`https://wa.me/917204398855?text=${encodeURIComponent("Hello! I would like to make an enquiry about Brillnex Technologies and its services.")}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-gray-300 font-heading font-semibold hover:text-white transition-colors text-sm bg-white/5 px-5 py-2 rounded-md border border-white/10"
+            className="text-gray-300 font-heading font-semibold hover:text-white transition-colors text-xs bg-white/5 px-4 py-2.5 rounded-md border border-white/10"
           >
             Enquire Now
           </a>
@@ -102,6 +110,15 @@ export default function Header() {
             </Link>
           ))}
           <div className="flex flex-col gap-3 pt-4">
+            <a
+              href="https://chat.whatsapp.com/CJkfezhYm245urYCdmRLL8"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-center bg-[#25D366] hover:bg-[#20ba5a] text-white font-heading font-semibold rounded-md py-3 transition-colors flex items-center justify-center gap-2"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Join Community
+            </a>
             <a
               href={`https://wa.me/917204398855?text=${encodeURIComponent("Hello! I would like to make an enquiry about Brillnex Technologies and its services.")}`}
               target="_blank"

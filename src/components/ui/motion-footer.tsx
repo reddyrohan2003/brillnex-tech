@@ -327,16 +327,27 @@ export function CinematicFooter() {
               <div className="flex flex-wrap justify-center gap-4 w-full">
                 <MagneticButton 
                   as="a" 
+                  href="https://chat.whatsapp.com/CJkfezhYm245urYCdmRLL8" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="footer-glass-pill px-8 py-5 rounded-full text-white font-bold text-sm md:text-base flex items-center gap-3 group border-[#25D366]/20 bg-[#25D366]/5 hover:bg-[#25D366]/15"
+                >
+                  <MessageCircle className="w-6 h-6 text-[#25D366] group-hover:scale-110 transition-transform animate-pulse" />
+                  Join Community
+                </MagneticButton>
+
+                <MagneticButton 
+                  as="a" 
                   href="https://wa.me/917204398855?text=Hello%20Brillnex,%20I%20would%20like%20to%20enquire%20about%20your%20training%20programs." 
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="footer-glass-pill px-10 py-5 rounded-full text-white font-bold text-sm md:text-base flex items-center gap-3 group"
+                  className="footer-glass-pill px-8 py-5 rounded-full text-white font-bold text-sm md:text-base flex items-center gap-3 group"
                 >
                   <MessageCircle className="w-6 h-6 text-green-400 group-hover:scale-110 transition-transform" />
                   Chat with Counselor
                 </MagneticButton>
                 
-                <MagneticButton as="a" href="/courses" className="footer-glass-pill px-10 py-5 rounded-full text-white font-bold text-sm md:text-base flex items-center gap-3 group">
+                <MagneticButton as="a" href="/courses" className="footer-glass-pill px-8 py-5 rounded-full text-white font-bold text-sm md:text-base flex items-center gap-3 group">
                   <BookOpen className="w-6 h-6 text-[#FF6B35] group-hover:scale-110 transition-transform" />
                   Explore All Courses
                 </MagneticButton>

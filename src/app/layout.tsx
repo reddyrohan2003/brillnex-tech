@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/components/home/Header";
 import { CinematicFooter } from "@/components/ui/motion-footer";
 import { NavBar } from "@/components/ui/NavBar";
+import { FloatingWhatsApp } from "@/components/ui/FloatingWhatsApp";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -18,8 +19,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Brillnex",
-  description: "Upskill for Tomorrow's Career Today",
+  title: "Brillnex Technologies | Professional Upskilling & Digital Solutions",
+  description: "Empowering the next generation of tech leaders. Learn in-demand engineering, management, and biotech skills with live mentor-led courses, or build custom digital products.",
 };
 
 export default function RootLayout({
@@ -44,6 +45,7 @@ export default function RootLayout({
         <main className="flex-grow relative z-10 bg-background shadow-lg rounded-b-[2.5rem] border-b border-border/10 pb-8">
           {children}
         </main>
+        <FloatingWhatsApp />
         <CinematicFooter />
       </body>
     </html>
