@@ -5,6 +5,7 @@ import Header from "@/components/home/Header";
 import { CinematicFooter } from "@/components/ui/motion-footer";
 import { NavBar } from "@/components/ui/NavBar";
 import { FloatingWhatsApp } from "@/components/ui/FloatingWhatsApp";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -47,6 +48,7 @@ export default function RootLayout({
         </main>
         <FloatingWhatsApp />
         <CinematicFooter />
+        <SpeedInsights />
       </body>
     </html>
   );
