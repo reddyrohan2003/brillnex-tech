@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/components/home/Header";
 import { CinematicFooter } from "@/components/ui/motion-footer";
 import { NavBar } from "@/components/ui/NavBar";
+import { Analytics } from "@vercel/analytics/next";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -45,6 +46,7 @@ export default function RootLayout({
           {children}
         </main>
         <CinematicFooter />
+        <Analytics />
       </body>
     </html>
   );
