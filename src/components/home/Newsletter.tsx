@@ -38,7 +38,9 @@ export default function WhatsAppCommunity() {
             
             <div className="w-full lg:w-auto flex flex-col items-center lg:items-end">
               <a 
-                href="#"
+                href="https://chat.whatsapp.com/CJkfezhYm245urYCdmRLL8"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="group flex items-center justify-center gap-3 bg-white text-green-700 font-heading font-bold text-lg px-8 py-4 rounded-xl hover:bg-gray-50 hover:scale-105 transition-all shadow-xl w-full sm:w-auto"
               >
                 <MessageCircle size={24} className="fill-green-600 text-green-600" />
