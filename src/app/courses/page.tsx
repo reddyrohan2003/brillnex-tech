@@ -87,7 +87,7 @@ const courses = [
     desc: "Analyze complex business datasets using SQL databases, Excel spreadsheets, PowerBI interactive reports, and statistical analytics.",
     rating: 4.8,
     reviews: 490,
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=340&fit=crop",
+    image: "https://images.unsplash.com/photo-1543286386-7a39502216a6?w=600&h=340&fit=crop",
     features: ["Data Cleaning & Prepping", "Excel Advanced Analytics", "PowerBI & Dashboards", "Statistical Modeling"],
     color: "from-teal-500 to-emerald-600"
   },
@@ -111,7 +111,7 @@ const courses = [
     desc: "Create high-performance cross-platform iOS and Android apps using React Native, Flutter, and cloud backends.",
     rating: 4.8,
     reviews: 580,
-    image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=600&h=340&fit=crop",
+    image: "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=600&h=340&fit=crop",
     features: ["React Native & Flutter", "iOS & Android Builds", "State Management", "App Store Publishing"],
     color: "from-violet-500 to-fuchsia-600"
   },
@@ -123,7 +123,7 @@ const courses = [
     desc: "Prepare for AWS Certification. Learn cloud infrastructure design, virtual networks, scaling, and database setups.",
     rating: 4.9,
     reviews: 1560,
-    image: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=600&h=340&fit=crop",
+    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600&h=340&fit=crop",
     features: ["EC2, S3 & VPC Setup", "Cloud Security & IAM", "Serverless with Lambda", "DevOps & CloudFormation"],
     color: "from-orange-500 to-amber-600"
   },
@@ -135,7 +135,7 @@ const courses = [
     desc: "Master cloud environments across AWS, Azure, and Google Cloud, covering virtualization, architecture, and network configuration.",
     rating: 4.9,
     reviews: 680,
-    image: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=600&h=340&fit=crop",
+    image: "https://images.unsplash.com/photo-1597852074816-d933c4d2b988?w=600&h=340&fit=crop",
     features: ["Multi-Cloud Setup", "Virtualization & Networks", "Cloud Storage & Databases", "Security & Compliance"],
     color: "from-blue-500 to-sky-600"
   },
@@ -147,7 +147,7 @@ const courses = [
     desc: "Build immersive virtual and augmented reality experiences using Unity, Unreal Engine, C# scripting, and 3D assets.",
     rating: 4.8,
     reviews: 290,
-    image: "https://images.unsplash.com/photo-1614850523459-c2f4c699c52e?w=600&h=340&fit=crop",
+    image: "https://images.unsplash.com/photo-1593508512255-86ab42a8e620?w=600&h=340&fit=crop",
     features: ["Unity & C# Scripting", "3D Modeling & Assets", "Oculus & WebXR SDKs", "Interactive VR Projects"],
     color: "from-fuchsia-500 to-purple-600"
   },
@@ -171,7 +171,7 @@ const courses = [
     desc: "Automate system deployments. Master Docker containerization, Kubernetes orchestration, Jenkins pipelines, and IaC using Terraform.",
     rating: 4.8,
     reviews: 750,
-    image: "https://images.unsplash.com/photo-1486006920555-c77dce18193b?w=600&h=340&fit=crop",
+    image: "https://images.unsplash.com/photo-1618401471353-b98aedd07871?w=600&h=340&fit=crop",
     features: ["Docker & Kubernetes", "Jenkins CI/CD Pipelines", "Terraform Infrastructure", "Monitoring & Logging Tools"],
     color: "from-orange-500 to-red-600"
   },
@@ -247,7 +247,7 @@ const courses = [
     desc: "Master 2D drafting and 3D modeling of mechanical components, assembly drawings, and blueprint interpretation.",
     rating: 4.8,
     reviews: 610,
-    image: "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=600&h=340&fit=crop",
+    image: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?w=600&h=340&fit=crop",
     features: ["2D Orthographic Drafting", "3D Solid & Surface Modeling", "Assembly Design Sheets", "Mechanical Standards & Tolerances"],
     color: "from-orange-500 to-red-600"
   },
@@ -271,7 +271,7 @@ const courses = [
     desc: "Study thermodynamics, fuel injection systems, combustion dynamics, and emission control systems of modern IC engines.",
     rating: 4.7,
     reviews: 240,
-    image: "https://images.unsplash.com/photo-1486006920555-c77dce18193b?w=600&h=340&fit=crop",
+    image: "https://images.unsplash.com/photo-1517524206127-48bbd363f3d7?w=600&h=340&fit=crop",
     features: ["Thermodynamic Cycles", "Fuel Injection & Induction", "Combustion Dynamics & CFD", "Emission Testing & Controls"],
     color: "from-amber-500 to-orange-600"
   },
@@ -295,7 +295,7 @@ const courses = [
     desc: "Learn structural loading, mechanical structural frame simulations, stress distribution, and support reactions.",
     rating: 4.8,
     reviews: 320,
-    image: "https://images.unsplash.com/photo-1581094288338-2314dddb7ecc?w=600&h=340&fit=crop",
+    image: "https://images.unsplash.com/photo-1590069261209-f8e9b8642343?w=600&h=340&fit=crop",
     features: ["Structural Finite Element Analysis", "Loading Calculations", "Stress & Shear Diagrams", "Frame Support Reactions"],
     color: "from-blue-600 to-indigo-600"
   },
@@ -309,7 +309,7 @@ const courses = [
     desc: "Create 2D floor plans, building elevation sheets, structural framing drawings, and architectural layouts.",
     rating: 4.8,
     reviews: 530,
-    image: "https://images.unsplash.com/photo-1503387762-592dedb80256?w=600&h=340&fit=crop",
+    image: "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=600&h=340&fit=crop",
     features: ["2D Building Floor Plans", "3D Elevation Renderings", "Structural Column Layouts", "Civil Standard Drawing Codes"],
     color: "from-orange-500 to-amber-600"
   },
@@ -371,7 +371,7 @@ const courses = [
     desc: "Convert data to actionable decisions using Excel formulas, SQL databases, PowerBI reports, and predictive analysis.",
     rating: 4.8,
     reviews: 910,
-    image: "https://images.unsplash.com/photo-1551836022-b06985bcdb25?w=600&h=340&fit=crop",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=340&fit=crop",
     features: ["SQL & Data Querying", "Excel Model Analytics", "PowerBI & Dashboards", "Predictive Analytics Models"],
     color: "from-pink-500 to-rose-600"
   },
@@ -421,7 +421,7 @@ const courses = [
     desc: "Study nanomaterials at the atomic scale, synthesis, characterization tools (SEM, TEM), and chemical/physical properties.",
     rating: 4.8,
     reviews: 180,
-    image: "https://images.unsplash.com/photo-1614850523459-c2f4c699c52e?w=600&h=340&fit=crop",
+    image: "https://images.unsplash.com/photo-1532187863486-abf9d39d66e8?w=600&h=340&fit=crop",
     features: ["Nanomaterial Synthesis", "SEM & TEM Microscopy", "Quantum Scale Properties", "Characterization Techniques"],
     color: "from-indigo-500 to-teal-500"
   },

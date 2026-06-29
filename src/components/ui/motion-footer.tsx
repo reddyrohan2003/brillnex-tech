@@ -359,7 +359,7 @@ export function CinematicFooter() {
                   Privacy Policy
                 </Link>
                 <Link href="/terms" className="footer-glass-pill px-6 py-3 rounded-full text-white/70 font-medium text-xs md:text-sm hover:text-white">
-                  Terms of Service
+                  Terms and Conditions
                 </Link>
                 <a href="mailto:support@brillnex.com" className="footer-glass-pill px-6 py-3 rounded-full text-white/70 font-medium text-xs md:text-sm hover:text-white flex items-center gap-2">
                   <Mail size={14} className="text-primary" /> Email Support

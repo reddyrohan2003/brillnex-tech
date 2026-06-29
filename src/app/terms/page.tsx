@@ -60,7 +60,7 @@ export default function TermsConditions() {
             </h2>
             <ul className="list-disc pl-6 space-y-2 text-gray-600">
               <li><strong>Fees:</strong> All course fees must be paid according to the chosen pricing plan (Single Payment or installment-based) prior to the start of classes, unless authorized in writing by our finance team.</li>
-              <li><strong>Refunds:</strong> Since our courses involve live classes, mentor allocation, and digital learning assets, course fees are generally **non-refundable** once the batch starts. If you wish to cancel or reschedule, please reach out to support within 3 business days prior to your class start date.</li>
+              <li><strong>Refunds:</strong> Since our courses involve live classes, mentor allocation, and digital learning assets, course fees are **strictly non-refundable**. Once paid, fees will not be refunded under any circumstances.</li>
               <li><strong>Taxes:</strong> All listed prices are exclusive or inclusive of applicable taxes as indicated at the checkout page or booking invoice.</li>
             </ul>
           </section>
