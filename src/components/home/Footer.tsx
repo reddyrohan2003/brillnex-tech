@@ -76,10 +76,10 @@ export default function Footer() {
               <li className="flex items-center gap-3">
                 <Mail size={18} className="text-primary flex-shrink-0" />
                 <a 
-                  href="mailto:info@brillnextech.com" 
+                  href="mailto:support@brillnex.com" 
                   className="text-gray-400 hover:text-white transition-colors text-sm"
                 >
-                  info@brillnextech.com
+                  support@brillnex.com
                 </a>
               </li>
             </ul>

@@ -117,7 +117,7 @@ export default function TermsConditions() {
             </p>
             <div className="bg-gray-50 rounded-xl p-6 border border-gray-100 space-y-2 text-gray-700">
               <p><strong>Brillnex Technologies</strong></p>
-              <p>Email: <a href="mailto:info@brillnextech.com" className="text-primary hover:underline font-semibold">info@brillnextech.com</a></p>
+              <p>Email: <a href="mailto:support@brillnex.com" className="text-primary hover:underline font-semibold">support@brillnex.com</a></p>
               <p>WhatsApp Support: <a href="https://wa.me/917204398855" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline font-semibold">+91 7204398855</a></p>
             </div>
           </section>
