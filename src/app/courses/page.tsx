@@ -87,7 +87,7 @@ const courses = [
     desc: "Analyze complex business datasets using SQL databases, Excel spreadsheets, PowerBI interactive reports, and statistical analytics.",
     rating: 4.8,
     reviews: 490,
-    image: "https://images.unsplash.com/photo-1543286386-7a39502216a6?w=600&h=340&fit=crop",
+    image: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=600&h=340&fit=crop",
     features: ["Data Cleaning & Prepping", "Excel Advanced Analytics", "PowerBI & Dashboards", "Statistical Modeling"],
     color: "from-teal-500 to-emerald-600"
   },
@@ -135,7 +135,7 @@ const courses = [
     desc: "Master cloud environments across AWS, Azure, and Google Cloud, covering virtualization, architecture, and network configuration.",
     rating: 4.9,
     reviews: 680,
-    image: "https://images.unsplash.com/photo-1597852074816-d933c4d2b988?w=600&h=340&fit=crop",
+    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&h=340&fit=crop",
     features: ["Multi-Cloud Setup", "Virtualization & Networks", "Cloud Storage & Databases", "Security & Compliance"],
     color: "from-blue-500 to-sky-600"
   },
@@ -171,7 +171,7 @@ const courses = [
     desc: "Automate system deployments. Master Docker containerization, Kubernetes orchestration, Jenkins pipelines, and IaC using Terraform.",
     rating: 4.8,
     reviews: 750,
-    image: "https://images.unsplash.com/photo-1618401471353-b98aedd07871?w=600&h=340&fit=crop",
+    image: "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=600&h=340&fit=crop",
     features: ["Docker & Kubernetes", "Jenkins CI/CD Pipelines", "Terraform Infrastructure", "Monitoring & Logging Tools"],
     color: "from-orange-500 to-red-600"
   },
@@ -233,7 +233,7 @@ const courses = [
     desc: "Program microcontrollers using Embedded C, configure GPIOs, timers, interrupts, and serial communication protocols (I2C, SPI).",
     rating: 4.9,
     reviews: 520,
-    image: "https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?w=600&h=340&fit=crop",
+    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&h=340&fit=crop",
     features: ["Microcontroller Architecture", "Embedded C Programming", "GPIO, Timers & Interrupts", "I2C, SPI & UART Protocols"],
     color: "from-blue-500 to-indigo-600"
   },
@@ -335,7 +335,7 @@ const courses = [
     desc: "Master SEO, search engine marketing, social media ads, email automation, analytics, and content marketing strategies.",
     rating: 4.9,
     reviews: 1150,
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=340&fit=crop",
+    image: "https://images.unsplash.com/photo-1533750516457-a7f992034fec?w=600&h=340&fit=crop",
     features: ["Search Engine Optimization", "Meta & Google Ads Manager", "Email Marketing Automation", "Web Analytics & Reporting"],
     color: "from-sky-500 to-blue-600"
   },
@@ -371,7 +371,7 @@ const courses = [
     desc: "Convert data to actionable decisions using Excel formulas, SQL databases, PowerBI reports, and predictive analysis.",
     rating: 4.8,
     reviews: 910,
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=340&fit=crop",
+    image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=600&h=340&fit=crop",
     features: ["SQL & Data Querying", "Excel Model Analytics", "PowerBI & Dashboards", "Predictive Analytics Models"],
     color: "from-pink-500 to-rose-600"
   },
@@ -421,7 +421,7 @@ const courses = [
     desc: "Study nanomaterials at the atomic scale, synthesis, characterization tools (SEM, TEM), and chemical/physical properties.",
     rating: 4.8,
     reviews: 180,
-    image: "https://images.unsplash.com/photo-1532187863486-abf9d39d66e8?w=600&h=340&fit=crop",
+    image: "https://images.unsplash.com/photo-1562408590-e32931084e23?w=600&h=340&fit=crop",
     features: ["Nanomaterial Synthesis", "SEM & TEM Microscopy", "Quantum Scale Properties", "Characterization Techniques"],
     color: "from-indigo-500 to-teal-500"
   },
@@ -461,7 +461,7 @@ const services = [
     desc: "Custom responsive website design and development tailored to showcase your business or personal portfolio with premium animations.",
     rating: 4.9,
     reviews: 120,
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=340&fit=crop",
+    image: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=600&h=340&fit=crop",
     features: ["Responsive Design", "Premium Animations", "SEO Optimized Code", "Speed Optimization"],
     color: "from-sky-500 to-blue-600"
   },
