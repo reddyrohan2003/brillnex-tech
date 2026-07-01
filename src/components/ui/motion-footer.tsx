@@ -376,13 +376,17 @@ export function CinematicFooter() {
               © {new Date().getFullYear()} Brillnex. All rights reserved.
             </div>
 
-            {/* "Made with Love" Badge */}
-            <div className="footer-glass-pill px-6 py-3 rounded-full flex items-center gap-2 order-1 md:order-2 cursor-default border-white/10">
-              <span className="text-white/60 text-[10px] md:text-xs font-bold uppercase tracking-widest">Designed with</span>
-              <span className="animate-footer-heartbeat text-sm md:text-base text-red-500">❤</span>
-              <span className="text-white/60 text-[10px] md:text-xs font-bold uppercase tracking-widest">by</span>
-              <span className="text-white font-black text-xs md:text-sm tracking-normal ml-1">Brillnex</span>
-            </div>
+            {/* Developer Credit Badge */}
+            <a 
+              href="https://reddyrohan2003.github.io/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="footer-glass-pill px-5 py-2.5 rounded-full flex items-center gap-2 order-1 md:order-2 border-white/10 hover:border-white/20 transition-all duration-300 hover:scale-105 group cursor-pointer"
+            >
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse group-hover:bg-primary transition-colors"></span>
+              <span className="text-white/60 text-[10px] md:text-xs font-bold uppercase tracking-widest">Crafted by</span>
+              <span className="text-white font-black text-xs md:text-sm tracking-normal group-hover:text-primary transition-colors">Rohan Reddy</span>
+            </a>
 
             {/* Back to top */}
             <button

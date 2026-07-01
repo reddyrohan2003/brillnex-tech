@@ -90,8 +90,17 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-gray-800 flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="flex flex-col md:flex-row items-center gap-4 md:gap-8 text-center md:text-left">
-            <p className="text-gray-400 text-sm">
-              &copy; {new Date().getFullYear()} Brillnex. All rights reserved.
+            <p className="text-gray-400 text-sm flex items-center gap-1.5 flex-wrap justify-center md:justify-start">
+              <span>&copy; {new Date().getFullYear()} Brillnex. All rights reserved.</span>
+              <span className="text-gray-600 hidden md:inline">|</span>
+              <a 
+                href="https://reddyrohan2003.github.io/" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="text-gray-500 hover:text-primary transition-colors text-xs font-semibold"
+              >
+                Crafted by Rohan Reddy
+              </a>
             </p>
             <div className="flex items-center gap-4 text-xs">
               <Link href="/privacy" className="text-gray-400 hover:text-white transition-colors">
